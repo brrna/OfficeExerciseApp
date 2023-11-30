@@ -1,0 +1,29 @@
+[
+    {
+        "id": 0,
+        "title": "Boyun Egzersizleri",
+        "imageURL": "null",
+        "time": "null"
+    },
+
+    {
+        "id": 1,
+        "title": "Sırt Egzersizleri",
+        "imageURL": "null",
+        "time": "null"
+    },
+
+    {
+        "id": 2,
+        "title": "Kol Egzersizleri",
+        "imageURL": "null",
+        "time": "null"
+    },
+
+    {
+        "id": 3,
+        "title": "Bacak Egzersizleri",
+        "imageURL": "null",
+        "time": "null"
+    }
+]
