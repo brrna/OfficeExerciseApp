@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView, FlatList } from "react-native";
+import DraggableFlatList from 'react-native-draggable-flatlist'
 
 import Header from "./src/components/header/Header";
 import Card from "./src/components/card/Card";
@@ -7,7 +8,9 @@ import exercise_data from "./src/exercise_data.json"
 
 function App() {
 
-    const renderExercise = ({ item }) => <Card exercize={item} />
+    const [data, setData] = useState(exercise_data)
+
+    const renderExercise = ({ item }) => <Card exercise={item} />
     const keyExercise = item => item.id.toString()
 
     return(
@@ -20,8 +23,8 @@ function App() {
 
                 <Header />
                 
-                <FlatList
-                    data={exercise_data}
+                <DraggableFlatList
+                    data={data}
                     renderItem={renderExercise}
                     keyExtractor={keyExercise}
                 />
