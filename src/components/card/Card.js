@@ -1,5 +1,5 @@
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
-import { Text, Image, TouchableOpacity, View } from 'react-native';
+import { Text, Image, View, TouchableOpacity } from 'react-native';
 
 const Card = ({ exercise }) => {
     return (
