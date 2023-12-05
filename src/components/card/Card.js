@@ -5,7 +5,7 @@ const Card = ({ exercise }) => {
     return (
         <TouchableOpacity
             style={{
-                backgroundColor: "white",
+                backgroundColor: "red",
                 height: hp("30%"),
                 width: wp("100%"),
                 borderColor: "black",

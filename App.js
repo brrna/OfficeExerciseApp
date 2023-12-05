@@ -7,41 +7,16 @@ import { NestableScrollContainer, NestableDraggableFlatList } from "react-native
 import Header from "./src/components/header/Header";
 import Card from "./src/components/card/Card";
 import exercise_data from "./src/exercise_data.json"
+import MyDragAndDropList from './src/pages/MyDragAndDropList';
 
 function App() {
-  const [data, setData] = useState(exercise_data);
-
-  const renderItem = ({ item, index, drag, isActive }) => {
-    return (
-      <Card
-        exercise={item}
-        onLongPress={drag}
-      />
-    );
-  };
-
-  return (
-    <GestureHandlerRootView>
-      <NestableScrollContainer
-        style={{
-          flex: 1,
-          backgroundColor: "blue",
-          flexDirection: "column",
-        }} >
-
+  return(
+    <GestureHandlerRootView
+      style={{flex: 1}}>
         <Header />
-
-        <NestableDraggableFlatList
-          data={data}
-          renderItem={renderItem}
-          keyExtractor={(item, index) => `draggable-item-${item.id}`}
-          onDragEnd={({ data }) => setData(data)}
-        />
-
-      </NestableScrollContainer>
+        <MyDragAndDropList />
     </GestureHandlerRootView>
-
-  );
+  )
 }
 
 export default App;
