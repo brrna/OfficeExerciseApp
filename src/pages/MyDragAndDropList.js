@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { FlatList, Text, View } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { FlatList, Text, View, TouchableOpacity } from 'react-native';
+//import { TouchableOpacity } from 'react-native-gesture-handler';
 import Animated from 'react-native-reanimated';
 import DraggableFlatList from 'react-native-draggable-flatlist';
 
@@ -23,7 +23,7 @@ const MyDragAndDropList = () => {
             borderRadius: 8,
           }}
         >
-          <Text>{item.text}</Text>
+          <Text>{item.text} </Text>
         </Animated.View>
       </TouchableOpacity>
     );
