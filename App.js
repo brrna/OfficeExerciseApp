@@ -3,6 +3,7 @@ import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native';
 import DraggableFlatList from 'react-native-draggable-flatlist';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NestableScrollContainer, NestableDraggableFlatList } from "react-native-draggable-flatlist"
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 
 import Header from "./src/components/header/Header";
 import Card from "./src/components/card/Card";
@@ -18,7 +19,9 @@ function App() {
     return(
       <TouchableOpacity
         onLongPress={drag}>
-         <Card exercise={item} />
+          <Animated.View>
+          <Card exercise={item} />
+          </Animated.View>
       </TouchableOpacity>
     )
   }

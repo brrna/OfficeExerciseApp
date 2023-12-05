@@ -4,50 +4,47 @@ import Animated from "react-native-reanimated";
 
 const Card = ({ exercise }) => {
     return (
-        <TouchableOpacity>
-            <Animated.View
+        <View
+            style={{
+                height: hp("30%"),
+                width: wp("100%"),
+                borderColor: "black",
+                borderWidth: 1,
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "row"
+            }}>
+            <View
                 style={{
-                    backgroundColor: "red",
-                    height: hp("30%"),
-                    width: wp("100%"),
-                    borderColor: "black",
-                    borderWidth: 1,
+                    backgroundColor: "yellow",
+                    height: hp("29%"),
+                    width: wp("60%"),
                     justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "row"
+                    alignItems: "center"
                 }}>
-                <View
+                <Image
                     style={{
-                        backgroundColor: "yellow",
-                        height: hp("29%"),
-                        width: wp("60%"),
-                        justifyContent: "center",
-                        alignItems: "center"
-                    }}>
-                    <Image
-                        style={{
-                            height: 50,
-                            width: 50
-                        }}
-                        source={{ uri: exercise.imageURL }}
-                        resizeMode="center" />
-                </View>
+                        height: 50,
+                        width: 50
+                    }}
+                    source={{ uri: exercise.imageURL }}
+                    resizeMode="center" />
+            </View>
 
-                <View
+            <View
+                style={{
+                    backgroundColor: "orange",
+                    height: hp("29%"),
+                    width: wp("40%")
+                }}>
+                <Text>{exercise.title}</Text>
+
+                <Text
                     style={{
-                        backgroundColor: "orange",
-                        height: hp("29%"),
-                        width: wp("40%")
-                    }}>
-                    <Text>{exercise.title}</Text>
-
-                    <Text
-                        style={{
-                            fontSize: 50
-                        }}>{exercise.time}</Text>
-                </View>
-            </Animated.View>
-        </TouchableOpacity>
+                        fontSize: 50
+                    }}>{exercise.time}</Text>
+            </View>
+        </View>
     )
 }
 
