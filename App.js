@@ -1,14 +1,17 @@
 import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';//sarmalama
+import { NavigationContainer } from '@react-navigation/native';
 
 import Router from "./src/pages/router/Router"
 
 function App() {
 
   return (
-    <GestureHandlerRootView> 
-      <Router />
-    </GestureHandlerRootView>
+    <NavigationContainer>
+      <GestureHandlerRootView>
+        <Router />
+      </GestureHandlerRootView>
+    </NavigationContainer>
   )
 }
 

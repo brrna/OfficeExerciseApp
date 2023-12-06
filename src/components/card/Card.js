@@ -1,11 +1,17 @@
 import { Text, Image, View } from 'react-native';
 import styles from "./CardStyle"
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 //Component oluşturuldu. exercise props olarak gönderildi.
-const Card = ({ exercise }) => {
+const Card = (props) => {
+
+    let {exercise, navigation} = props;
+    
+
     return (
-        <View
-            style={styles.container}>
+        <TouchableOpacity
+            style={styles.container}
+            onPress={() => navigation.navigate() }>
             <View
                 style={styles.imageView}>
                 <Image
@@ -21,7 +27,7 @@ const Card = ({ exercise }) => {
                 <Text
                     >{exercise.time}</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 
