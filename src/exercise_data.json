@@ -2,28 +2,28 @@
     {
         "id": 0,
         "title": "Boyun Egzersizleri",
-        "imageURL": "https://cdn.pixabay.com/photo/2023/11/28/08/53/skyscraper-8416953_1280.jpg",
+        "imageURL": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmadicanacdnstorage.blob.core.windows.net%2Fmain%2FAssets%2Fphoto%2Fr%2Fboyun-duzlesmesi-21403-65627_t.jpg&tbnid=ydbxuYXOHeqhSM&vet=12ahUKEwjctYa-q_qCAxWx4bsIHdLwAowQMygiegUIARCbAQ..i&imgrefurl=https%3A%2F%2Fwww.medicana.com.tr%2Fsaglik-rehberi-detay%2F10466%2Fboyun-duzlesmesi&docid=roJWhDQVA2HOcM&w=260&h=260&q=boyun%20ve%20omuz%20%20egzersizi&ved=2ahUKEwjctYa-q_qCAxWx4bsIHdLwAowQMygiegUIARCbAQ",
         "time": "1"
     },
 
     {
         "id": 1,
         "title": "Sırt Egzersizleri",
-        "imageURL": "https://cdn.pixabay.com/photo/2023/11/28/08/53/skyscraper-8416953_1280.jpg",
+        "imageURL": "https://www.google.com/imgres?imgurl=https%3A%2F%2Falptekinfiziktedavi.com%2Fwp-content%2Fuploads%2F2023%2F08%2Fofis-egzersiz-fizik-tedavi.jpg&tbnid=TxF4Oqdu42xyKM&vet=12ahUKEwipt4rwq_qCAxVYh_0HHedCDLIQMygCegQIARBM..i&imgrefurl=https%3A%2F%2Falptekinfiziktedavi.com%2Fofis-calisanlarinin-sirt-agrisi-sorununa-cozumler%2F&docid=vTVUcO2lcsF3IM&w=1500&h=1000&q=s%C4%B1rt%20ve%20omurga%20egzersizi%20ofis&ved=2ahUKEwipt4rwq_qCAxVYh_0HHedCDLIQMygCegQIARBM",
         "time": "2"
     },
 
     {
         "id": 2,
         "title": "Kol Egzersizleri",
-        "imageURL": "https://cdn.pixabay.com/photo/2023/11/28/08/53/skyscraper-8416953_1280.jpg",
+        "imageURL": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fblog.hemington.com.tr%2Fwp-content%2Fwebp-express%2Fwebp-images%2Fuploads%2F2018%2F10%2Fhemington-kol-esnetme-hareketi.jpg.webp&tbnid=bubt37Mlnd2swM&vet=12ahUKEwjzuaSRrPqCAxVA47sIHb3NDUoQMygXegUIARCGAQ..i&imgrefurl=https%3A%2F%2Fblog.hemington.com.tr%2Fdaha-dik-durabilmek-icin-6-etkili-ev-ve-ofis-egzersizi&docid=OsZA9FQ7tcyaxM&w=1200&h=800&q=kol%20egzersizi%20ofis&ved=2ahUKEwjzuaSRrPqCAxVA47sIHb3NDUoQMygXegUIARCGAQ",
         "time": "3"
     },
 
     {
         "id": 3,
         "title": "Bacak Egzersizleri",
-        "imageURL": "https://cdn.pixabay.com/photo/2023/11/28/08/53/skyscraper-8416953_1280.jpg",
+        "imageURL": "https://www.google.com/imgres?imgurl=https%3A%2F%2Ffitpeople.com%2Ftr%2Fwp-content%2Fuploads%2F2019%2F01%2Fofis-egzersizler-laptop-masa-e1547764074451.jpg&tbnid=rLwpPp-5JaM-mM&vet=12ahUKEwiv67SvrPqCAxWDhf0HHd95Ci4QMygJegQIARBn..i&imgrefurl=https%3A%2F%2Ffitpeople.com%2Ftr%2Ffitness%2Fofiste-calisirken-yapabileceginiz-cesitli-egzersizler%2F&docid=10y0zU-k657GuM&w=500&h=333&itg=1&q=bacak%20egzersizi%20ofis&ved=2ahUKEwiv67SvrPqCAxWDhf0HHd95Ci4QMygJegQIARBn",
         "time": "4"
     }
 ]

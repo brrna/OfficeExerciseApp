@@ -10,8 +10,8 @@ const Card = ({ exercise }) => {
                 style={styles.imageView}>
                 <Image
                     style={styles.image}
-                    source={{ uri: exercise.imageURL }}
-                    resizeMode="center" />
+                    source={{uri: exercise.imageURL}}
+                    resizeMode="contain" />
             </View>
 
             <View
