@@ -1,42 +1,46 @@
 import React, { useState } from 'react';
-import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import DraggableFlatList from 'react-native-draggable-flatlist';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { NestableScrollContainer, NestableDraggableFlatList } from "react-native-draggable-flatlist"
-import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
+
 
 import Header from "./src/components/header/Header";
 import Card from "./src/components/card/Card";
-import exercise_data from "./src/exercise_data.json"
-import MyDragAndDropList from './src/pages/MyDragAndDropList';
-import Animated from 'react-native-reanimated';
+//json dosyasına is, title vb şeyler için liste oluşturuldu ve buraya dahil edildi
+import exercise_data from "./src/exercise_data.json" 
+
 
 function App() {
 
+// useState ile const olarak tanımlandı.
   const [data, setData] = useState(exercise_data);
 
-  const renderExercise = ({item, index, drag, isActive, }) => {
+// Flatlist için her bir öge render edildi.
+  const renderExercise = ({item, index, drag, isActive }) => {
     return(
       <TouchableOpacity
-        onLongPress={drag}>
-          <Animated.View>
-          <Card exercise={item} />
-          </Animated.View>
+        onLongPress={drag} //ögeye uzun süre basıldığında sürüklenmeye hazır hale getirir
+        > 
+          <Card exercise={item} //props kullanımı
+          /> 
       </TouchableOpacity>
     )
   }
 
   return(
-    <GestureHandlerRootView
+    <GestureHandlerRootView //drag drop için sarmalama
       style={{flex: 1}}>
         <Header />
-        <DraggableFlatList 
+        <DraggableFlatList //Drag drop şçşn olab flatlist
           data={data}
           renderItem={renderExercise}
-          keyExtractor={(item) => item.id}/>
+          keyExtractor={(item) => item.id.toString()}
+          onDragEnd={({data}) => setData(data) }
+          //onDragEnd olmasaydı, ögeler yer değiştirdiğinde Card içindeki bilgiler de değişiyordu.
+          //Bununla beraber sadece sıralama güncelleniyor.
+          />
     </GestureHandlerRootView>
   )
 }
 
 export default App;
-

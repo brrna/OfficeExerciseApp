@@ -1,48 +1,25 @@
-import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
-import { Text, Image, View, TouchableOpacity } from 'react-native';
-import Animated from "react-native-reanimated";
+import { Text, Image, View } from 'react-native';
+import styles from "./CardStyle"
 
+//Component oluşturuldu. exercise props olarak gönderildi.
 const Card = ({ exercise }) => {
     return (
         <View
-            style={{
-                height: hp("30%"),
-                width: wp("100%"),
-                borderColor: "black",
-                borderWidth: 1,
-                justifyContent: "center",
-                alignItems: "center",
-                flexDirection: "row"
-            }}>
+            style={styles.container}>
             <View
-                style={{
-                    backgroundColor: "yellow",
-                    height: hp("29%"),
-                    width: wp("60%"),
-                    justifyContent: "center",
-                    alignItems: "center"
-                }}>
+                style={styles.imageView}>
                 <Image
-                    style={{
-                        height: 50,
-                        width: 50
-                    }}
+                    style={styles.image}
                     source={{ uri: exercise.imageURL }}
                     resizeMode="center" />
             </View>
 
             <View
-                style={{
-                    backgroundColor: "orange",
-                    height: hp("29%"),
-                    width: wp("40%")
-                }}>
+                style={styles.textView}>
                 <Text>{exercise.title}</Text>
 
                 <Text
-                    style={{
-                        fontSize: 50
-                    }}>{exercise.time}</Text>
+                    >{exercise.time}</Text>
             </View>
         </View>
     )
