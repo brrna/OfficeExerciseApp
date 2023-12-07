@@ -8,13 +8,15 @@ const Card = (props) => {
 
     let {exercise, navigation} = props;
 
-    
+    const handlePress = () => {
+        () => navigation.navigate(exercise.page)
+    }
     
 
     return (
         <TouchableOpacity
             style={styles.container}
-            onPress={ exercise.page }>
+            onPress={ handlePress }>
             <View
                 style={styles.imageView}>
                 <Image
