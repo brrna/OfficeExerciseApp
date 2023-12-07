@@ -10,12 +10,6 @@ import Header from "../../components/header/Header";
 //json dosyasına is, title vb şeyler için liste oluşturuldu ve buraya dahil edildi
 import exercise_data from "../../exercise_data.json"
 
-//pages
-import Arm from "../Arm"
-import Back from "../Back";
-import Leg from "../Leg";
-import Neck from "../Neck";
-
 function Router() {
 
     // useState ile const olarak tanımlandı.
@@ -27,17 +21,15 @@ function Router() {
     const renderExercise = ({ item, index, drag, isActive }) => {
         return (
             <TouchableOpacity
-                onLongPress={drag}> 
-            
+                onLongPress={drag}>
                 <Card exercise={item} /> 
-                
             </TouchableOpacity>
         )
     }
     return (
         <View>
             <Header/>
-            <DraggableFlatList //Drag drop şçşn olab flatlist
+            <DraggableFlatList //Drag drop için olab flatlist
                 data={data}
                 renderItem={renderExercise}
                 keyExtractor={(item) => item.id.toString()}
@@ -45,12 +37,6 @@ function Router() {
             //onDragEnd olmasaydı, ögeler yer değiştirdiğinde Card içindeki bilgiler de değişiyordu.
             //Bununla beraber sadece sıralama güncelleniyor.
             />
-            <Stack.Navigator>
-                <Stack.Screen name="Arm" component={Arm} />
-                <Stack.Screen name="Back" component={Back} />
-                <Stack.Screen name="Leg" component={Leg} />
-                <Stack.Screen name="Neck" component={Neck} />
-            </Stack.Navigator>
         </View>
     )
 }
