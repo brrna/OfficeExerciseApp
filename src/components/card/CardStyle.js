@@ -4,7 +4,7 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-nat
 
 export default StyleSheet.create({
     container: {
-        height: hp("30%"),
+        height: hp("23%"),
         width: wp("100%"),
         borderColor: "black",
         borderWidth: 1,
@@ -14,7 +14,7 @@ export default StyleSheet.create({
     },
     imageView: {
         backgroundColor: "yellow",
-        height: hp("29%"),
+        height: hp("23%"),
         width: wp("60%"),
         justifyContent: "center",
         alignItems: "center"
@@ -25,7 +25,7 @@ export default StyleSheet.create({
     },
     textView: {
         backgroundColor: "orange",
-        height: hp("29%"),
+        height: hp("23%"),
         width: wp("40%")
     },
     title: {},

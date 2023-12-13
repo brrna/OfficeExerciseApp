@@ -4,19 +4,12 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 //Component oluşturuldu. exercise props olarak gönderildi.
 const Card = (props) => {
-    console.log(props);
-
-    let {exercise, navigation} = props;
-
-    const handlePress = () => {
-        () => navigation.navigate(exercise.page)
-    }
     
+    let {exercise} = props;
 
     return (
         <TouchableOpacity
-            style={styles.container}
-            onPress={ handlePress }>
+            style={styles.container}>
             <View
                 style={styles.imageView}>
                 <Image
