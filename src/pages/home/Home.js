@@ -3,7 +3,7 @@ import Header from "../../components/header/Header";
 import DraggableFlatList from "react-native-draggable-flatlist";
 import { useState } from "react";
 import exercise_data from "../../exercise_data.json"
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
 import Card from "../../components/card/Card";
 
 
