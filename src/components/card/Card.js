@@ -1,20 +1,25 @@
 import { Text, Image, View } from 'react-native';
 import styles from "./CardStyle"
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native';
 
 //Component oluşturuldu. exercise props olarak gönderildi.
 const Card = (props) => {
     
-    let {exercise} = props;
+    let {navigation, exercise} = props;
+
+    const handlePress = () => {
+            navigation.navigate(exercise.page);
+    };
 
     return (
         <TouchableOpacity
+            onPress={handlePress}
             style={styles.container}>
             <View
                 style={styles.imageView}>
                 <Image
                     style={styles.image}
-                    source={{uri: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmadicanacdnstorage.blob.core.windows.net%2Fmain%2FAssets%2Fphoto%2Fr%2Fboyun-duzlesmesi-21403-65627_t.jpg&tbnid=ydbxuYXOHeqhSM&vet=12ahUKEwjctYa-q_qCAxWx4bsIHdLwAowQMygiegUIARCbAQ..i&imgrefurl=https%3A%2F%2Fwww.medicana.com.tr%2Fsaglik-rehberi-detay%2F10466%2Fboyun-duzlesmesi&docid=roJWhDQVA2HOcM&w=260&h=260&q=boyun%20ve%20omuz%20%20egzersizi&ved=2ahUKEwjctYa-q_qCAxWx4bsIHdLwAowQMygiegUIARCbAQ"}}
+                    source={{uri: "https://cdn.pixabay.com/photo/2023/09/14/15/54/bird-8253245_1280.jpg" }}
                     resizeMode="contain" />
             </View>
 
@@ -22,8 +27,8 @@ const Card = (props) => {
                 style={styles.textView}>
                 <Text>{exercise.title}</Text>
 
-                <Text
-                    >{exercise.time}</Text>
+                <Text>{exercise.time}</Text>
+
             </View>
         </TouchableOpacity>
     )

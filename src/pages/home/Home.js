@@ -15,7 +15,7 @@ function Home() {
         return(
             <TouchableOpacity
                 onLongPress={drag}>
-                    <Card exercise={item} />
+                    <Card exercise={item} navigation={navigation} />
             </TouchableOpacity>
         )
     }
