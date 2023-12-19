@@ -1,11 +1,14 @@
 import { Text, Image, View } from 'react-native';
 import styles from "./CardStyle"
 import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 //Component oluşturuldu. exercise props olarak gönderildi.
 const Card = (props) => {
     
-    let {navigation, exercise} = props;
+    let {exercise} = props;
+
+    const navigation = useNavigation();
 
     const handlePress = () => {
             navigation.navigate(exercise.page);

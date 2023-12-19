@@ -15,8 +15,9 @@ function Router() {
 
 
     return (
-            <Stack.Navigator>
-                <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
+            <Stack.Navigator 
+                screenOptions={{headerShown: false}}>
+                <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="Arm" component={Arm} />
                 <Stack.Screen name="Back" component={Back} />
                 <Stack.Screen name="Leg" component={Leg} />
