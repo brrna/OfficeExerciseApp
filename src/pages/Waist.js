@@ -1,6 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, TouchableOpacity } from "react-native";
 import Home from "./home/Home";
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
+import MyButton from "../components/button/MyButton";
 
 const Waist = () => {
 
@@ -22,7 +24,11 @@ const Waist = () => {
                     }}>
                 </View>
             </TouchableOpacity>
+
             <Text>Bel</Text>
+
+            <MyButton />
+
         </View>
     )
 }

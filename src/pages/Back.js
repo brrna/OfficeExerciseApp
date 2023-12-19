@@ -3,6 +3,8 @@ import { useState } from "react";
 import YoutubePlayer from "react-native-youtube-iframe";
 import { useNavigation } from "@react-navigation/native";
 import Home from "./home/Home";
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
+import MyButton from "../components/button/MyButton";
 
 const Back = () => {
 
@@ -19,6 +21,7 @@ const Back = () => {
 
     return(
         <View>
+
             <TouchableOpacity
                 onPress={() => navigation.navigate(Home) }>
                 <View
@@ -29,12 +32,17 @@ const Back = () => {
                     }}>
                 </View>
             </TouchableOpacity>
+
             <YoutubePlayer
             height={300}
             play={playing}
             videoId={'lqOuqA1Ii7U'} 
             onChangeState={onStateChange}/>
+
             <Button title={playing ? 'pause' : 'play'} onPress={() => setPlaying((prev) => !prev)} />
+            
+            <MyButton />
+
         </View>
     )
 }

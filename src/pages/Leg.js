@@ -1,14 +1,19 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, TouchableOpacity } from "react-native";
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import Home from "./home/Home";
+import MyButton from "../components/button/MyButton";
 
 const Leg = () => {
 
     const navigation = useNavigation();
 
     return(
-        <View>
+        <View
+            style={{flex: 1}}>
+
             <Text>Leg</Text>
+
             <TouchableOpacity
                 onPress={() => navigation.navigate(Home) }>
                 <View
@@ -19,6 +24,9 @@ const Leg = () => {
                     }}>
                 </View>
             </TouchableOpacity>
+            
+            <MyButton />
+
         </View>
     )
 }

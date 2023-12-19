@@ -1,6 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, TouchableOpacity } from "react-native";
 import Home from "./home/Home";
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
+import MyButton from "../components/button/MyButton";
 
 const Neck = () => {
 
@@ -8,6 +10,7 @@ const Neck = () => {
 
     return(
         <View>
+
             <TouchableOpacity
                 onPress={() => navigation.navigate(Home) }>
                 <View
@@ -18,7 +21,11 @@ const Neck = () => {
                     }}>
                 </View>
             </TouchableOpacity>
+
             <Text>Neck</Text>
+
+            <MyButton />
+
         </View>
     )
 }
