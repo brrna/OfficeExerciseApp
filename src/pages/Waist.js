@@ -2,13 +2,17 @@ import { useNavigation } from "@react-navigation/native";
 import { View, Text, TouchableOpacity } from "react-native";
 import Home from "./home/Home";
 
-const Neck = () => {
+const Waist = () => {
 
     const navigation = useNavigation();
 
     return(
-        <View>
-            <TouchableOpacity
+        <View
+            style={{
+                flex: 1,
+                backgroundColor: "pink"
+            }}>
+                <TouchableOpacity
                 onPress={() => navigation.navigate(Home) }>
                 <View
                     style={{
@@ -18,9 +22,9 @@ const Neck = () => {
                     }}>
                 </View>
             </TouchableOpacity>
-            <Text>Neck</Text>
+            <Text>Bel</Text>
         </View>
     )
 }
 
-export default Neck;
+export default Waist;

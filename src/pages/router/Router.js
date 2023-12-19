@@ -3,10 +3,10 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 //pages
 import Home from "../home/Home";
-import Arm from "../Arm";
 import Back from "../Back";
 import Leg from "../Leg";
 import Neck from "../Neck";
+import Waist from "../Waist";
 
 function Router() {
 
@@ -18,7 +18,7 @@ function Router() {
             <Stack.Navigator 
                 screenOptions={{headerShown: false}}>
                 <Stack.Screen name="Home" component={Home} />
-                <Stack.Screen name="Arm" component={Arm} />
+                <Stack.Screen name="Waist" component={Waist} />
                 <Stack.Screen name="Back" component={Back} />
                 <Stack.Screen name="Leg" component={Leg} />
                 <Stack.Screen name="Neck" component={Neck} />

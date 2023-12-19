@@ -1,6 +1,5 @@
 import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import AppContainer from "./src/pages/home/Home"
 
 //pages
 import Router from "./src/pages/router/Router"
