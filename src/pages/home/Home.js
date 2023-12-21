@@ -1,9 +1,8 @@
-import { View } from "react-native";
+import { Pressable, View } from "react-native";
 import Header from "../../components/header/Header";
 import DraggableFlatList from "react-native-draggable-flatlist";
 import { useState } from "react";
 import exercise_data from "../../exercise_data.json"
-import { TouchableOpacity } from "react-native";
 import Card from "../../components/card/Card";
 
 
@@ -13,10 +12,10 @@ function Home() {
 
     const renderExercise = ({item, index, drag, isActive}) => {
         return(
-            <TouchableOpacity
+            <Pressable
                 onLongPress={drag}>
-                    <Card exercise={item} navigation={item} />
-            </TouchableOpacity>
+                    <Card exercise={item} />
+            </Pressable>
         )
     }
 
