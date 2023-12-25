@@ -4,39 +4,39 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-nat
 import YoutubePlayer from "react-native-youtube-iframe"
 import styles from "./MyButtonStyle"
 
-const MyButton = () => {
+const MyButton = ({videoId, onStateChange}) => {
 
     const [modalVisible, setModalVisible] = useState(false);
     const [playing, setPlaying] = useState(false);
     const [timerId, setTimerId] = useState(null);
 
-    const onStateChange = (state) => {
-        if (state === 'ended') {
-            setPlaying(false);
-            Alert.alert("video finished");
-        }
-    };
-
     useEffect(() => {
         if(playing) {
-            const id = setInterval(() => {
-                console.log("1");
+            const id = setTimeout(() => {
                 setPlaying(false);
-                console.log("2");
-                setTimeout(() => {
-                    console.log("3");
-                    setPlaying(true);
-                    console.log("4");
-                }, 10000);
-                console.log("5");
-            }, 30000);
-            console.log("6");
+                onStateChange('ended');
+            }, 40000); // 40 saniye sonra video kapansın
             setTimerId(id);
         } else if (timerId) {
-            console.log("7");
-            clearInterval(timerId);
+            clearTimeout(timerId);
         }
     }, [playing] )
+
+    useEffect(() => {
+        if(modalVisible) {
+            setPlaying(true);
+        } else {
+            setPlaying(false);
+        }
+    }, [modalVisible])
+
+    useEffect(() => {
+        return () => {
+            if (timerId) {
+                clearTimeout(timerId);
+            }
+        };
+    }, [timerId]);
 
     return (
         <View>
@@ -46,7 +46,6 @@ const MyButton = () => {
                 transparent={true}
                 visible={modalVisible}
                 onRequestClose={() => {
-                    Alert.alert("Modal has been closed.")
                     setModalVisible(!modalVisible)
                 }}>
 
@@ -62,10 +61,10 @@ const MyButton = () => {
                     <YoutubePlayer
                         height={300}
                         play={playing}
-                        videoId={'lqOuqA1Ii7U'}
+                        videoId={videoId} // durum değişkenini kullan
                         onChangeState={onStateChange} />
 
-                    <Button title={playing ? 'pause' : 'play'} onPress={() => setPlaying((prev) => !prev)} />
+                    <Button title={playing ? 'duraklat' : 'oynat'} onPress={() => setPlaying((prev) => !prev)} />
 
                 </View>
 
