@@ -11,7 +11,7 @@ const Leg = () => {
     const [playing, setPlaying] = useState(false);
     const [videoIndex, setVideoIndex] = useState(0);
 
-    const videoIds = [];
+    const videoIds = ['uC7dzhqN47M', 'WFtPk4Z-k60', 'CYGeazlNbU4'];
 
     const onStateChange = (event) => {
         if (event === 'ended') {
@@ -40,7 +40,7 @@ const Leg = () => {
                 </View>
             </TouchableOpacity>
             
-            <MyButton videoId={videoIds[videoIndex]} onStateChange={onStateChange} playing={playing} setPlaying={setPlaying} />
+            <MyButton videoId={videoIds[videoIndex]} onStateChange={event => onStateChange(event)} playing={playing} setPlaying={setPlaying} />
 
         </View>
     )

@@ -11,7 +11,7 @@ const Waist = () => {
     const [playing, setPlaying] = useState(false);
     const [videoIndex, setVideoIndex] = useState(0);
 
-    const videoIds = [];
+    const videoIds = ['bJms9YyjoBI', 'ryNlb_0GmAw', 'q46qN4ypiFo'];
 
     const onStateChange = (event) => {
         if (event === 'ended') {
@@ -42,7 +42,7 @@ const Waist = () => {
 
             <Text>Bel</Text>
 
-            <MyButton videoId={videoIds[videoIndex]} onStateChange={onStateChange} playing={playing} setPlaying={setPlaying} />
+            <MyButton videoId={videoIds[videoIndex]} onStateChange={event => onStateChange(event)} playing={playing} setPlaying={setPlaying} />
 
         </View>
     )

@@ -10,7 +10,7 @@ const Back = () => {
     const [videoIndex, setVideoIndex] = useState(0); // ilk video indexi
     const [playing, setPlaying] = useState(false);
 
-    const videoIds = ['lqOuqA1Ii7U', 'gDUzaANQ01A', 'V-_O7nl0Ii0']; // video kimliklerinin listesi
+    const videoIds = ['q_uOqXQhBq4', 'wZVO6ZnARIE', '0jzWXtnipPY']; // video kimliklerinin listesi
 
     const onStateChange = (event) => {
         if (event === 'ended') {
@@ -36,7 +36,7 @@ const Back = () => {
                 </View>
             </TouchableOpacity>
             
-            <MyButton videoId={videoIds[videoIndex]} onStateChange={onStateChange} playing={playing} setPlaying={setPlaying}/>
+            <MyButton videoId={videoIds[videoIndex]} onStateChange={event => onStateChange(event)} playing={playing} setPlaying={setPlaying}/>
 
         </View>
     )

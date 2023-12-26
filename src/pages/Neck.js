@@ -11,9 +11,9 @@ const Neck = () => {
     const [videoIndex, setVideoIndex] = useState(0);
     const [playing, setPlaying] = useState(false);
 
-    const videoIds = [];
+    const videoIds = ['DEyDbzSudEU', 'Uf0MKHeT67c', 'cqCtbELMH4I', '8QyMRoSZM8c'];
 
-    const onStateChange = () => {
+    const onStateChange = (event) => {
         if(event === 'ended') {
             const nextVideoIndex = (videoIndex + 1) % videoIds.length;
             setTimeout(() => {
@@ -39,7 +39,7 @@ const Neck = () => {
 
             <Text>Neck</Text>
 
-            <MyButton videoId={videoIds[videoIndex]} playing={playing} setPlaying={setPlaying} onStateChange={onStateChange} />
+            <MyButton videoId={videoIds[videoIndex]} playing={playing} setPlaying={setPlaying} onStateChange={event => onStateChange(event)} />
 
         </View>
     )
