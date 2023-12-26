@@ -3,10 +3,25 @@ import { View, Text, TouchableOpacity } from "react-native";
 import Home from "./home/Home";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import MyButton from "../components/myButton/MyButton";
+import { useState } from "react";
 
 const Neck = () => {
 
     const navigation = useNavigation();
+    const [videoIndex, setVideoIndex] = useState(0);
+    const [playing, setPlaying] = useState(false);
+
+    const videoIds = [];
+
+    const onStateChange = () => {
+        if(event === 'ended') {
+            const nextVideoIndex = (videoIndex + 1) % videoIds.length;
+            setTimeout(() => {
+                setPlaying(true);
+                setVideoIndex(nextVideoIndex);
+            }, 10000);
+        }
+    }
 
     return(
         <View>
@@ -24,7 +39,7 @@ const Neck = () => {
 
             <Text>Neck</Text>
 
-            <MyButton />
+            <MyButton videoId={videoIds[videoIndex]} playing={playing} setPlaying={setPlaying} onStateChange={onStateChange} />
 
         </View>
     )
