@@ -8,6 +8,8 @@ const Back = () => {
 
     const navigation = useNavigation();
     const [videoIndex, setVideoIndex] = useState(0); // ilk video indexi
+    const [playing, setPlaying] = useState(false);
+
     const videoIds = ['lqOuqA1Ii7U', 'gDUzaANQ01A', 'V-_O7nl0Ii0']; // video kimliklerinin listesi
 
     const onStateChange = (event) => {
