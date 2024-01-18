@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
-import { View, TouchableOpacity, Text, Modal, Alert, Pressable, Button } from "react-native";
+import { View, TouchableOpacity, Text, Modal, Pressable, Button } from "react-native";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import YoutubePlayer from "react-native-youtube-iframe"
 import styles from "./MyButtonStyle"
+import MyProgressBar from "../myProgressBar/MyProgressBar";
 
-const MyButton = ({videoId, onStateChange}) => {
+const MyButton = ({ videoId, onStateChange, videoIndex }) => {
 
     const [modalVisible, setModalVisible] = useState(false);
     const [playing, setPlaying] = useState(false);
     const [timerId, setTimerId] = useState(null);
 
     useEffect(() => {
-        if(playing) {
+        if (playing) {
             const id = setTimeout(() => {
                 setPlaying(false);
                 onStateChange('ended');
@@ -20,10 +21,10 @@ const MyButton = ({videoId, onStateChange}) => {
         } else if (timerId) {
             clearTimeout(timerId);
         }
-    }, [playing] )
+    }, [playing])
 
     useEffect(() => {
-        if(modalVisible) {
+        if (modalVisible) {
             setPlaying(true);
         } else {
             setPlaying(false);
@@ -38,6 +39,7 @@ const MyButton = ({videoId, onStateChange}) => {
         };
     }, [timerId, modalVisible]);
 
+
     return (
         <View>
 
@@ -51,6 +53,8 @@ const MyButton = ({videoId, onStateChange}) => {
 
                 <View
                     style={styles.container}>
+
+                    <MyProgressBar progress={videoIndex} />
 
                     <Pressable //modal dan çıkmaK için
                         style={styles.button}
