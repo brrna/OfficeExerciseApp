@@ -11,7 +11,7 @@ export default StyleSheet.create({
     },
     title: {
         height: hp("9%"),
-        width: wp("75%"),
+        width: wp(75),
         backgroundColor: "green",
         justifyContent: "center"
     },

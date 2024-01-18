@@ -1,12 +1,11 @@
-import { Text, Image, View } from 'react-native';
-import styles from "./CardStyle"
-import { TouchableOpacity } from 'react-native';
+import { Text, Image, View, TouchableOpacity } from 'react-native';
+import styles from "./CardStyle";
 import { useNavigation } from '@react-navigation/native';
 
 //Component oluşturuldu. exercise props olarak gönderildi.
 const Card = (props) => {
     
-    let {exercise} = props;
+    let {exercise, onLongPress} = props;
 
     const navigation = useNavigation();
 
@@ -17,6 +16,7 @@ const Card = (props) => {
     return (
         <TouchableOpacity
             onPress={handlePress}
+            onLongPress={onLongPress}
             style={styles.container}>
             <View
                 style={styles.imageView}>

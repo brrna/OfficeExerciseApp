@@ -8,14 +8,13 @@ import Card from "../../components/card/Card";
 
 function Home() {
 
+
     const [data, setData] = useState(exercise_data);
 
     const renderExercise = ({item, index, drag, isActive}) => {
         return(
-            <Pressable
-                onLongPress={drag}>
-                    <Card exercise={item} />
-            </Pressable>
+            <Card exercise={item}  onLongPress={drag}/> 
+           
         )
     }
 

@@ -36,7 +36,7 @@ const MyButton = ({videoId, onStateChange}) => {
                 clearTimeout(timerId);
             }
         };
-    }, [timerId]);
+    }, [timerId, modalVisible]);
 
     return (
         <View>

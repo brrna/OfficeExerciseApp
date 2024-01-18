@@ -14,7 +14,7 @@ export default StyleSheet.create({
     },
     imageView: {
         backgroundColor: "yellow",
-        height: hp("22%"),
+        height: hp("21%"),
         width: wp("60%"),
         justifyContent: "center",
         alignItems: "center"
@@ -25,7 +25,7 @@ export default StyleSheet.create({
     },
     textView: {
         backgroundColor: "orange",
-        height: hp("22%"),
+        height: hp("21%"),
         width: wp("40%")
     },
     title: {},
