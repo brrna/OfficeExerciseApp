@@ -5,7 +5,7 @@ import YoutubePlayer from "react-native-youtube-iframe"
 import styles from "./MyButtonStyle"
 import MyProgressBar from "../myProgressBar/MyProgressBar";
 
-const MyButton = ({ videoId, onStateChange, videoIndex }) => {
+const MyButton = ({ videoId, onStateChange, videoIndex}) => {
 
     const [modalVisible, setModalVisible] = useState(false);
     const [playing, setPlaying] = useState(false);
@@ -51,10 +51,10 @@ const MyButton = ({ videoId, onStateChange, videoIndex }) => {
                     setModalVisible(!modalVisible)
                 }}>
 
+                    <MyProgressBar progress={videoIndex} />
+
                 <View
                     style={styles.container}>
-
-                    <MyProgressBar progress={videoIndex} />
 
                     <Pressable //modal dan çıkmaK için
                         style={styles.button}

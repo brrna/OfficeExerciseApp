@@ -39,7 +39,7 @@ const Neck = () => {
 
             <Text>Neck</Text>
 
-            <MyButton videoId={videoIds[videoIndex]} playing={playing} setPlaying={setPlaying} onStateChange={event => onStateChange(event)} />
+            <MyButton videoId={videoIds[videoIndex]} playing={playing} setPlaying={setPlaying} onStateChange={event => onStateChange(event)} videoIndex={videoIndex * 0.25} />
 
         </View>
     )

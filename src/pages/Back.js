@@ -36,7 +36,7 @@ const Back = () => {
                 </View>
             </TouchableOpacity>
             
-            <MyButton videoId={videoIds[videoIndex]} onStateChange={event => onStateChange(event)} playing={playing} setPlaying={setPlaying}/>
+            <MyButton videoId={videoIds[videoIndex]} onStateChange={event => onStateChange(event)} playing={playing} setPlaying={setPlaying} videoIndex={videoIndex * 0.25}/>
 
         </View>
     )
