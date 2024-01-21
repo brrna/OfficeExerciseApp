@@ -1,44 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { View, TouchableOpacity, Text, Modal, Pressable, Button } from "react-native";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
-import YoutubePlayer from "react-native-youtube-iframe"
-import styles from "./MyButtonStyle"
+import styles from "./MyButtonStyle";
 import MyProgressBar from "../myProgressBar/MyProgressBar";
+import MyGif from "../myGif/MyGif";
 
-const MyButton = ({ videoId, onStateChange, videoIndex}) => {
+const MyButton = () => {
 
     const [modalVisible, setModalVisible] = useState(false);
-    const [playing, setPlaying] = useState(false);
-    const [timerId, setTimerId] = useState(null);
-
-    useEffect(() => {
-        if (playing) {
-            const id = setTimeout(() => {
-                setPlaying(false);
-                onStateChange('ended');
-            }, 40000); // 40 saniye sonra video kapansın
-            setTimerId(id);
-        } else if (timerId) {
-            clearTimeout(timerId);
-        }
-    }, [playing])
-
-    useEffect(() => {
-        if (modalVisible) {
-            setPlaying(true);
-        } else {
-            setPlaying(false);
-        }
-    }, [modalVisible])
-
-    useEffect(() => {
-        return () => {
-            if (timerId) {
-                clearTimeout(timerId);
-            }
-        };
-    }, [timerId, modalVisible]);
-
 
     return (
         <View>
@@ -51,24 +20,18 @@ const MyButton = ({ videoId, onStateChange, videoIndex}) => {
                     setModalVisible(!modalVisible)
                 }}>
 
-                    <MyProgressBar progress={videoIndex} />
-
                 <View
                     style={styles.container}>
+
+                    <MyProgressBar />
 
                     <Pressable //modal dan çıkmaK için
                         style={styles.button}
                         onPress={() => setModalVisible(!modalVisible)}>
                         <Text>X</Text>
                     </Pressable>
-
-                    <YoutubePlayer
-                        height={300}
-                        play={playing}
-                        videoId={videoId} // durum değişkenini kullan
-                        onChangeState={onStateChange} />
-
-                    <Button title={playing ? 'duraklat' : 'oynat'} onPress={() => setPlaying((prev) => !prev)} />
+                
+                    <MyGif gif={require("../../assests/images/kalp.gif")}/>
 
                 </View>
 
