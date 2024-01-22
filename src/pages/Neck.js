@@ -9,6 +9,12 @@ const Neck = () => {
 
     const navigation = useNavigation();
 
+    const gif = [
+        require("../assests/images/shoulder-circle.gif"),
+        require("../assests/images/neck-circle.gif"),
+        require("../assests/images/head-tilt.gif")
+    ]
+
     return(
         <View>
 
@@ -25,7 +31,7 @@ const Neck = () => {
 
             <Text>Neck</Text>
 
-            <MyButton />
+            <MyButton gif={gif[0]} />
 
         </View>
     )

@@ -1,9 +1,9 @@
 import { Image, View } from "react-native";
 
-const MyGif = ({gif}) => {
+const MyGif = ({source}) => {
     return(
         <View>
-            <Image source={gif} style={{height: 300}} />
+            <Image source={source} style={{height: 300}} />
         </View>
     )
 }

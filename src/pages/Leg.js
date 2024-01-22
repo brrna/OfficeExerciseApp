@@ -7,6 +7,12 @@ const Leg = () => {
 
     const navigation = useNavigation();
 
+    const gif = [
+        require("../assests/images/side-lunges.gif"),
+        require("../assests/images/calf-raises.gif"),
+        require("../assests/images/leg-stretches.gif")
+    ]
+
     return(
         <View
             style={{flex: 1}}>
@@ -24,7 +30,7 @@ const Leg = () => {
                 </View>
             </TouchableOpacity>
             
-            <MyButton />
+            <MyButton gif={gif[0]} />
 
         </View>
     )

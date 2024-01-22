@@ -7,6 +7,13 @@ const Back = () => {
 
     const navigation = useNavigation();
 
+    const gif = [
+        require("../assests/images/wall-pushup.gif"),
+        require("../assests/images/wall-sit.gif"),
+        require("../assests/images/sitting-spine-bending.gif")
+    ]
+    
+
     return(
         <View>
 
@@ -21,7 +28,7 @@ const Back = () => {
                 </View>
             </TouchableOpacity>
             
-            <MyButton />
+            <MyButton gif={gif[1]} />
             
         </View>
     )

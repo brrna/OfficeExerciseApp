@@ -5,7 +5,7 @@ import styles from "./MyButtonStyle";
 import MyProgressBar from "../myProgressBar/MyProgressBar";
 import MyGif from "../myGif/MyGif";
 
-const MyButton = () => {
+const MyButton = ({gif = []}) => {
 
     const [modalVisible, setModalVisible] = useState(false);
 
@@ -31,7 +31,7 @@ const MyButton = () => {
                         <Text>X</Text>
                     </Pressable>
                 
-                    <MyGif gif={require("../../assests/images/kalp.gif")}/>
+                    <MyGif source={gif} />
 
                 </View>
 
