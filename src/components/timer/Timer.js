@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-import { Image, Text, View } from "react-native";
+import { Text, View } from "react-native";
+import MyGif from "../myGif/MyGif";
 
-const Timer = ({gifs = []}) => {
+const Timer = ({gif, gifIndex}) => {
 
-    const [gifIndex, setGifIndex] = useState(0);
     const [seconds, setSeconds] = useState(0);
-
-    
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -18,8 +16,9 @@ const Timer = ({gifs = []}) => {
     return(
         <View>
             {seconds % 40 < 30 ? (
-                <Image source={gifs[gifIndex]} style={{ width: 200, height: 200 }} />
+                <MyGif gif={gif} gifIndex={gifIndex} />
             ) : null}
+
             <Text>{seconds} saniye geçti</Text>
         </View>
     )

@@ -1,13 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { View, TouchableOpacity, Text, Modal, Pressable } from "react-native";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import styles from "./MyButtonStyle";
 import MyProgressBar from "../myProgressBar/MyProgressBar";
-import MyGif from "../myGif/MyGif";
+import Timer from "../timer/Timer";
 
-const MyButton = ({gif}) => {
+const MyButton = ({gif, gifIndex, setGifIndex}) => {
 
     const [modalVisible, setModalVisible] = useState(false);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setGifIndex((prevIndex) => {
+                if(prevIndex < gif.length){
+                    return prevIndex + 1;
+                }
+                else{
+                    return 0;
+                }
+            })
+        }, 40000)
+        return() => clearInterval(timer);
+    }, [gif])
 
     return (
         <View>
@@ -31,7 +45,7 @@ const MyButton = ({gif}) => {
                         <Text>X</Text>
                     </Pressable>
                 
-                    <MyGif gif={gif} />
+                    <Timer gif={gif} gifIndex={gifIndex} />
               
 
                 </View>
