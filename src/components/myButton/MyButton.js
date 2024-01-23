@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { View, TouchableOpacity, Text, Modal, Pressable, Button } from "react-native";
+import { View, TouchableOpacity, Text, Modal, Pressable } from "react-native";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import styles from "./MyButtonStyle";
 import MyProgressBar from "../myProgressBar/MyProgressBar";
 import MyGif from "../myGif/MyGif";
 
-const MyButton = ({gif = []}) => {
+const MyButton = ({gif}) => {
 
     const [modalVisible, setModalVisible] = useState(false);
 
@@ -31,7 +31,8 @@ const MyButton = ({gif = []}) => {
                         <Text>X</Text>
                     </Pressable>
                 
-                    <MyGif source={gif} />
+                    <MyGif gif={gif} />
+              
 
                 </View>
 

@@ -4,13 +4,13 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-nat
 
 export default StyleSheet.create({
     container: {
-        height: hp("9%"),
-        width: wp("100%"),
+        height: hp(9),
+        width: wp(100),
         backgroundColor: "red",
         flexDirection: "row"
     },
     title: {
-        height: hp("9%"),
+        height: hp(9),
         width: wp(75),
         backgroundColor: "green",
         justifyContent: "center"
@@ -22,8 +22,8 @@ export default StyleSheet.create({
         marginLeft: 15
     },
     mode: {
-        height: hp("9%"),
-        width: wp("25%"),
+        height: hp(9),
+        width: wp(25),
         backgroundColor: "purple",
         alignItems: "center",
         justifyContent: "center"

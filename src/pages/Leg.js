@@ -14,8 +14,7 @@ const Leg = () => {
     ]
 
     return(
-        <View
-            style={{flex: 1}}>
+        <View>
 
             <Text>Leg</Text>
 
@@ -30,7 +29,7 @@ const Leg = () => {
                 </View>
             </TouchableOpacity>
             
-            <MyButton gif={gif[0]} />
+            <MyButton gif={gif} />
 
         </View>
     )

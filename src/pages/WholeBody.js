@@ -32,7 +32,7 @@ const WholeBody = () => {
 
             <Text>Tüm Vücut</Text>
 
-            <MyButton gif={gif[0]} />
+            <MyButton gif={gif} />
 
         </View>
     )

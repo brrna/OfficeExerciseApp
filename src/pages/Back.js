@@ -28,7 +28,7 @@ const Back = () => {
                 </View>
             </TouchableOpacity>
             
-            <MyButton gif={gif[1]} />
+            <MyButton gif={gif} />
             
         </View>
     )

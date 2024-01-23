@@ -31,7 +31,7 @@ const Neck = () => {
 
             <Text>Neck</Text>
 
-            <MyButton gif={gif[0]} />
+            <MyButton gif={gif} />
 
         </View>
     )

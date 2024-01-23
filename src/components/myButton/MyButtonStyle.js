@@ -3,15 +3,15 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-nat
 
 export default StyleSheet.create({
     container: {
-        width: wp("100%"),
-        height: hp("100%"),
+        width: wp(100),
+        height: hp(100),
         backgroundColor: "red",
         flexDirection: "column",
     },
     button: {
         backgroundColor: "white",
-        height: hp("3%"),
-        width: wp("5%"),
+        height: hp(3),
+        width: wp(5),
         alignItems: "center",
         justifyContent: "center"
     },
