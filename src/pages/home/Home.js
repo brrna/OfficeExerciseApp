@@ -1,4 +1,4 @@
-import { Pressable, View } from "react-native";
+import { View } from "react-native";
 import Header from "../../components/header/Header";
 import DraggableFlatList from "react-native-draggable-flatlist";
 import { useState } from "react";
@@ -12,17 +12,27 @@ function Home() {
 
     const renderExercise = ({item, index, drag, isActive}) => {
         return(
-            <Card exercise={item}  onLongPress={drag}/> 
+            <Card exercise={item}  onLongPress={drag} img={img[item.id]}/>
            
         )
     }
 
+    const img = [
+        require("../../assests/images/neck.jpg"),
+        require("../../assests/images/back.jpg"),
+        require("../../assests/images/leg.jpg"),
+        require("../../assests/images/body.jpg"),
+    ]
+
     return(
-        <View>
+        <View
+            style={{
+                flex: 1,
+                backgroundColor: "#f2f2f2"
+            }}>
             
             <Header />
 
-          
             <DraggableFlatList //Drag drop için olab flatlist
             data={data}
             renderItem={renderExercise}

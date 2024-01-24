@@ -6,25 +6,26 @@ export default StyleSheet.create({
     container: {
         height: hp(9),
         width: wp(100),
-        backgroundColor: "red",
+        backgroundColor: "#f2f2f2",
         flexDirection: "row"
     },
     title: {
         height: hp(9),
         width: wp(75),
-        backgroundColor: "green",
+        backgroundColor: "#f2f2f2",
         justifyContent: "center"
     },
     titletext: {
         fontStyle: "italic",
         fontSize: 30,
         fontWeight: "bold",
-        marginLeft: 15
+        marginLeft: 15,
+        color: "#240046"
     },
     mode: {
         height: hp(9),
         width: wp(25),
-        backgroundColor: "purple",
+        backgroundColor: "#e8d7ff",
         alignItems: "center",
         justifyContent: "center"
     }

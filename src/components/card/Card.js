@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 //Component oluşturuldu. exercise props olarak gönderildi.
 const Card = (props) => {
     
-    let {exercise, onLongPress} = props;
+    let {exercise, onLongPress, img = [0]} = props;
 
     const navigation = useNavigation();
 
@@ -22,15 +22,15 @@ const Card = (props) => {
                 style={styles.imageView}>
                 <Image
                     style={styles.image}
-                    source={{uri: "https://cdn.pixabay.com/photo/2023/09/14/15/54/bird-8253245_1280.jpg" }}
+                    source={img}
                     resizeMode="contain" />
             </View>
 
             <View
                 style={styles.textView}>
-                <Text>{exercise.title}</Text>
+                <Text style={styles.title} >{exercise.title}</Text>
 
-                <Text>{exercise.time}</Text>
+                <Text style={styles.time} > {exercise.time} </Text>
 
             </View>
         </TouchableOpacity>

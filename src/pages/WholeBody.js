@@ -10,9 +10,9 @@ const WholeBody = () => {
     const [gifIndex, setGifIndex] = useState(0);
 
     const gif = [
-        require("../assests/images/pick-up-knees.gif"),
-        require("../assests/images/jumping-jack.gif"),
-        require("../assests/images/body-stretch.gif")
+        require("../assests/gifs/pick-up-knees.gif"),
+        require("../assests/gifs/jumping-jack.gif"),
+        require("../assests/gifs/body-stretch.gif")
     ]
 
     return(

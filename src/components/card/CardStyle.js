@@ -4,30 +4,44 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-nat
 
 export default StyleSheet.create({
     container: {
-        height: hp(22),
-        width: wp(100),
-        borderColor: "black",
-        borderWidth: 1,
+        height: hp(23),
+        width: wp(98),
+        borderColor: "#7652b7",
+        borderWidth: 2,
         justifyContent: "center",
         alignItems: "center",
-        flexDirection: "row"
+        flexDirection: "row",
+        borderRadius: 10,
+        backgroundColor: "#7652b7",
+        margin: 5
     },
     imageView: {
-        backgroundColor: "yellow",
+        backgroundColor: "#f2f2f2",
         height: hp(21),
-        width: wp(60),
+        width: wp(50),
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        borderTopLeftRadius: 10,
+        borderBottomLeftRadius: 10
     },
     image: {
-        height: hp(15),
-        width: wp(15)
+        height: hp(41),
+        width: wp(41),
     },
     textView: {
-        backgroundColor: "orange",
+        backgroundColor: "#e8d7ff",
         height: hp(21),
-        width: wp(40)
+        width: wp(40),
+        borderTopRightRadius: 10,
+        borderBottomRightRadius: 10
     },
-    title: {},
-    time: {}
+    title: {
+        color: "#240046",
+        fontWeight: "bold",
+        fontSize: hp(3),
+        fontStyle: "italic"
+    },
+    time: {
+        color: "#240046"
+    }
 })

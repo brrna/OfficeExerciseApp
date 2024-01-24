@@ -10,9 +10,9 @@ const Neck = () => {
     const [gifIndex, setGifIndex] = useState(0);
 
     const gif = [
-        require("../assests/images/shoulder-circle.gif"),
-        require("../assests/images/neck-circle.gif"),
-        require("../assests/images/head-tilt.gif")
+        require("../assests/gifs/shoulder-circle.gif"),
+        require("../assests/gifs/neck-circle.gif"),
+        require("../assests/gifs/head-tilt.gif")
     ]
 
     return(

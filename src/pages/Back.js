@@ -10,9 +10,9 @@ const Back = () => {
     const [gifIndex, setGifIndex] = useState(0);
 
     const gif = [
-        require("../assests/images/wall-pushup.gif"),
-        require("../assests/images/wall-sit.gif"),
-        require("../assests/images/sitting-spine-bending.gif")
+        require("../assests/gifs/wall-pushup.gif"),
+        require("../assests/gifs/wall-sit.gif"),
+        require("../assests/gifs/sitting-spine-bending.gif")
     ]
     
     return(

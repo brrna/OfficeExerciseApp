@@ -4,9 +4,12 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-nat
 import styles from "./MyButtonStyle";
 import MyProgressBar from "../myProgressBar/MyProgressBar";
 import Timer from "../timer/Timer";
+import { useNavigation } from "@react-navigation/native";
+import Home from "../../pages/home/Home";
 
 const MyButton = ({gif, gifIndex, setGifIndex}) => {
 
+    const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
 
     useEffect(() => {
@@ -33,6 +36,7 @@ const MyButton = ({gif, gifIndex, setGifIndex}) => {
                 visible={modalVisible}
                 onRequestClose={() => {
                         setModalVisible(!modalVisible);
+                        navigation.navigate(Home);
                 }}>
 
                 <View
