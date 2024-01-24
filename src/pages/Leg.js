@@ -2,10 +2,12 @@ import { useNavigation } from "@react-navigation/native";
 import { View, Text, TouchableOpacity } from "react-native";
 import Home from "./home/Home";
 import MyButton from "../components/myButton/MyButton";
+import { useState } from "react";
 
 const Leg = () => {
 
     const navigation = useNavigation();
+    const [gifIndex, setGifIndex] = useState(0);
 
     const gif = [
         require("../assests/images/side-lunges.gif"),
@@ -29,7 +31,7 @@ const Leg = () => {
                 </View>
             </TouchableOpacity>
             
-            <MyButton gif={gif} />
+            <MyButton gif={gif} gifIndex={gifIndex} setGifIndex={setGifIndex} />
 
         </View>
     )

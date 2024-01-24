@@ -12,16 +12,17 @@ const MyButton = ({gif, gifIndex, setGifIndex}) => {
     useEffect(() => {
         const timer = setInterval(() => {
             setGifIndex((prevIndex) => {
-                if(prevIndex < gif.length){
+                if (prevIndex < gif.length - 1) {
                     return prevIndex + 1;
-                }
-                else{
+                } else {
+                    setModalVisible(false); //gif sonu modal kapandı 
                     return 0;
                 }
-            })
-        }, 40000)
-        return() => clearInterval(timer);
-    }, [gif])
+            });
+        }, 15000);
+
+        return () => clearInterval(timer);
+    }, [gif, setGifIndex]);
 
     return (
         <View>
@@ -31,7 +32,7 @@ const MyButton = ({gif, gifIndex, setGifIndex}) => {
                 transparent={true}
                 visible={modalVisible}
                 onRequestClose={() => {
-                    setModalVisible(!modalVisible)
+                        setModalVisible(!modalVisible);
                 }}>
 
                 <View
@@ -53,7 +54,9 @@ const MyButton = ({gif, gifIndex, setGifIndex}) => {
             </Modal>
 
             <TouchableOpacity
-                onPress={() => { setModalVisible(true) }}
+                onPress={() => { 
+                    setGifIndex(0)
+                    setModalVisible(true) }}
                 style={{
                     backgroundColor: "green",
                     height: hp("30%"),

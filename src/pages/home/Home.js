@@ -5,7 +5,6 @@ import { useState } from "react";
 import exercise_data from "../../exercise_data.json"
 import Card from "../../components/card/Card";
 
-
 function Home() {
 
 
@@ -20,6 +19,7 @@ function Home() {
 
     return(
         <View>
+            
             <Header />
 
           
@@ -31,9 +31,9 @@ function Home() {
             //onDragEnd olmasaydı, ögeler yer değiştirdiğinde Card içindeki bilgiler de değişiyordu.
             //Bununla beraber sadece sıralama güncelleniyor.
             />
-            
         </View>
     )
+
 }
 
 export default Home;

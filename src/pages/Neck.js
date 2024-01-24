@@ -1,13 +1,13 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, TouchableOpacity } from "react-native";
 import Home from "./home/Home";
-import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import MyButton from "../components/myButton/MyButton";
 import { useState } from "react";
 
 const Neck = () => {
 
     const navigation = useNavigation();
+    const [gifIndex, setGifIndex] = useState(0);
 
     const gif = [
         require("../assests/images/shoulder-circle.gif"),
@@ -31,7 +31,7 @@ const Neck = () => {
 
             <Text>Neck</Text>
 
-            <MyButton gif={gif} />
+            <MyButton gif={gif} gifIndex={gifIndex} setGifIndex={setGifIndex} />
 
         </View>
     )

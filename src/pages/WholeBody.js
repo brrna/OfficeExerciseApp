@@ -2,10 +2,12 @@ import { useNavigation } from "@react-navigation/native";
 import { View, Text, TouchableOpacity } from "react-native";
 import Home from "./home/Home";
 import MyButton from "../components/myButton/MyButton";
+import { useState } from "react";
 
 const WholeBody = () => {
 
     const navigation = useNavigation();
+    const [gifIndex, setGifIndex] = useState(0);
 
     const gif = [
         require("../assests/images/pick-up-knees.gif"),
@@ -32,7 +34,7 @@ const WholeBody = () => {
 
             <Text>Tüm Vücut</Text>
 
-            <MyButton gif={gif} />
+            <MyButton gif={gif} gifIndex={gifIndex} setGifIndex={setGifIndex} />
 
         </View>
     )

@@ -15,7 +15,7 @@ const Timer = ({gif, gifIndex}) => {
 
     return(
         <View>
-            {seconds % 40 < 30 ? (
+            {seconds % 15 < 10 ? (
                 <MyGif gif={gif} gifIndex={gifIndex} />
             ) : null}
 
