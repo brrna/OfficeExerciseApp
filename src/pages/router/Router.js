@@ -7,6 +7,7 @@ import Back from "../Back";
 import Leg from "../Leg";
 import Neck from "../Neck";
 import WholeBody from "../WholeBody";
+import Splash from "../Splash";
 
 function Router() {
 
@@ -18,6 +19,7 @@ function Router() {
             <Stack.Navigator 
                 style={{flex: 1}}
                 screenOptions={{headerShown: false}}>
+                <Stack.Screen name="Splash" component={Splash} /> 
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="Back" component={Back} />
                 <Stack.Screen name="Leg" component={Leg} />
