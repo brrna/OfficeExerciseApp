@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { View, Text, Modal, Pressable } from "react-native";
 import styles from "./MyButtonStyle";
 import MyProgressBar from "../myProgressBar/MyProgressBar";
-import Timer from "../myTimer/MyTimer";
 import { useNavigation } from "@react-navigation/native";
 import Home from "../../pages/home/Home";
 import Icon from "react-native-vector-icons/Ionicons"
+import MyTimer from "../myTimer/MyTimer";
+import * as Progress from "react-native-progress";
 
-const MyButton = ({gif, gifIndex, setGifIndex}) => {
+const MyButton = ({ gif, gifIndex, setGifIndex }) => {
 
     const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
@@ -35,35 +36,44 @@ const MyButton = ({gif, gifIndex, setGifIndex}) => {
                 transparent={true}
                 visible={modalVisible}
                 onRequestClose={() => {
-                        setModalVisible(!modalVisible);
-                        navigation.navigate(Home);
+                    setModalVisible(!modalVisible);
+                    navigation.navigate(Home);
                 }}>
 
-                <View
-                    style={styles.container}>
-                   
-                    <View
-                        style={styles.x_container}>
-                        <Pressable 
-                            onPress={() => setModalVisible(!modalVisible)}
-                            style={styles.x}>
-                                <Icon name="arrow-back-outline" style={styles.x_text} />
-                         </Pressable>
-                    </View>
-                
-                    <Timer gif={gif} gifIndex={gifIndex} />
+                <View style={styles.container}>
 
-                    <MyProgressBar />
-              
+                    <View style={styles.top}>
+                        <View
+                            style={styles.ArrowContainer}>
+                            <Pressable
+                                onPress={() => setModalVisible(!modalVisible)}
+                                style={styles.Arrow}>
+                                <Icon name="arrow-back-outline" style={styles.ArrowText} />
+                            </Pressable>
+                        </View>
+
+                        <MyTimer gif={gif} gifIndex={gifIndex} />
+
+                            <MyProgressBar />
+                        
+
+                       
+                    </View>
+
+                    <View style={styles.bottom}>
+                       <Text>saniye geriye akacak</Text>   
+                    </View>
+
 
                 </View>
 
             </Modal>
 
             <Pressable
-                onPress={() => { 
+                onPress={() => {
                     setGifIndex(0)
-                    setModalVisible(true) }}
+                    setModalVisible(true)
+                }}
                 style={styles.button}>
                 <Text style={styles.button_text} >BAŞLA</Text>
             </Pressable>

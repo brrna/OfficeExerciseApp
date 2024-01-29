@@ -18,8 +18,6 @@ const MyTimer = ({gif, gifIndex}) => {
             {seconds % 15 < 10 ? (
                 <MyGif gif={gif} gifIndex={gifIndex} />
             ) : null}
-
-            <Text>{seconds} saniye geçti</Text>
         </View>
     )
 }

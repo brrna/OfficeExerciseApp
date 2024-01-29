@@ -8,6 +8,19 @@ export default StyleSheet.create({
         backgroundColor: "#e8d7ff",
         flexDirection: "column",
     },
+    top: {
+        backgroundColor:"#e8d7ff",
+        height: hp(50),
+        width: wp(100),
+        justifyContent: "space-between",
+    },
+    bottom: {
+        backgroundColor: "#e8d7ff",
+        height: hp(50),
+        width: wp(100),
+        justifyContent: "center",
+        alignItems: "center"
+    },
     button: {
         backgroundColor: "#e8d7ff",
         height: hp(10),
@@ -21,14 +34,15 @@ export default StyleSheet.create({
         fontWeight: "bold",
         fontStyle: "normal"
     },
-    x_container: {
+    ArrowContainer: {
         backgroundColor: "#e8d7ff",
         width: wp(100),
         height: hp(6),
         alignItems: "flex-start",
-        justifyContent: "center"
+        justifyContent: "center",
+        marginTop: hp(1)
     },
-    x: {
+    Arrow: {
         backgroundColor: "#e8d7ff",
         height: hp(6),
         width: wp(10),
@@ -36,9 +50,9 @@ export default StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     }, 
-    x_text: {
+    ArrowText: {
         fontWeight: "bold",
         fontSize: 42,
         color: "#240046"
-    }
+    },
 })
