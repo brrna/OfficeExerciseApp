@@ -3,14 +3,10 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-nat
 
 export default StyleSheet.create({
     container: {
-        backgroundColor: "pink",
+        backgroundColor: "#e8d7ff",
             width: wp(100),
             height: hp(10),
             alignItems: "center",
             justifyContent: "center"
-    },
-    bar: {
-        color: "black",
-        width: wp(96)
     }
 })

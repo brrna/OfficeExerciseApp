@@ -5,6 +5,7 @@ import MyProgressBar from "../myProgressBar/MyProgressBar";
 import Timer from "../myTimer/MyTimer";
 import { useNavigation } from "@react-navigation/native";
 import Home from "../../pages/home/Home";
+import Icon from "react-native-vector-icons/Ionicons"
 
 const MyButton = ({gif, gifIndex, setGifIndex}) => {
 
@@ -46,13 +47,13 @@ const MyButton = ({gif, gifIndex, setGifIndex}) => {
                         <Pressable 
                             onPress={() => setModalVisible(!modalVisible)}
                             style={styles.x}>
-                                <Text style={styles.x_text}>X</Text>
+                                <Icon name="arrow-back-outline" style={styles.x_text} />
                          </Pressable>
                     </View>
-
-                    <MyProgressBar />
                 
                     <Timer gif={gif} gifIndex={gifIndex} />
+
+                    <MyProgressBar />
               
 
                 </View>

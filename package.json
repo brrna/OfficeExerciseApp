@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@flaticon/flaticon-uicons": "^3.1.0",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
     "@react-navigation/stack": "^6.3.20",
@@ -24,6 +25,7 @@
     "react-native-screens": "^3.27.0",
     "react-native-svg": "^14.1.0",
     "react-native-swipeable-item": "^2.0.9",
+    "react-native-vector-icons": "^10.0.3",
     "react-native-webview": "^13.6.3",
     "react-native-youtube-iframe": "^2.3.0",
     "update": "^0.4.2"

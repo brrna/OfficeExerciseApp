@@ -1,5 +1,6 @@
 export const lightTheme = {
     gri: "f2f2f2",
     lila: "e8d7ff",
-    mor: "240046"
+    koyumor: "240046",
+    açıkmor: "7552b7"
 }
