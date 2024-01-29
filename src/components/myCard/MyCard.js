@@ -1,4 +1,4 @@
-import { Text, Image, View, TouchableOpacity } from 'react-native';
+import { Text, Image, View, TouchableOpacity, Pressable } from 'react-native';
 import styles from "./MyCardStyle";
 import { useNavigation } from '@react-navigation/native';
 
@@ -14,7 +14,7 @@ const MyCard = (props) => {
     };
 
     return (
-        <TouchableOpacity
+        <Pressable
             onPress={handlePress}
             onLongPress={onLongPress}
             style={styles.container}>
@@ -28,12 +28,12 @@ const MyCard = (props) => {
 
             <View
                 style={styles.textView}>
-                <Text style={styles.title} >{exercise.title}</Text>
+                <Text style={styles.title}> {exercise.title} </Text>
 
-                <Text style={styles.time} > {exercise.time} </Text>
+                <Text style={styles.time}> {exercise.time} </Text>
 
             </View>
-        </TouchableOpacity>
+        </Pressable>
     )
 }
 

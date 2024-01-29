@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { View, TouchableOpacity, Text, Modal, Pressable } from "react-native";
-import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
+import { View, Text, Modal, Pressable } from "react-native";
 import styles from "./MyButtonStyle";
 import MyProgressBar from "../myProgressBar/MyProgressBar";
 import Timer from "../myTimer/MyTimer";
@@ -41,14 +40,17 @@ const MyButton = ({gif, gifIndex, setGifIndex}) => {
 
                 <View
                     style={styles.container}>
+                   
+                    <View
+                        style={styles.x_container}>
+                        <Pressable 
+                            onPress={() => setModalVisible(!modalVisible)}
+                            style={styles.x}>
+                                <Text style={styles.x_text}>X</Text>
+                         </Pressable>
+                    </View>
 
                     <MyProgressBar />
-
-                    <Pressable //modal dan çıkmaK için
-                        style={styles.button}
-                        onPress={() => setModalVisible(!modalVisible)}>
-                        <Text>X</Text>
-                    </Pressable>
                 
                     <Timer gif={gif} gifIndex={gifIndex} />
               
@@ -57,17 +59,13 @@ const MyButton = ({gif, gifIndex, setGifIndex}) => {
 
             </Modal>
 
-            <TouchableOpacity
+            <Pressable
                 onPress={() => { 
                     setGifIndex(0)
                     setModalVisible(true) }}
-                style={{
-                    backgroundColor: "green",
-                    height: hp("30%"),
-                    width: wp("70%"),
-                    marginBottom: 100               }}>
-                <Text style={{ fontSize: 30 }} >BAŞLA</Text>
-            </TouchableOpacity>
+                style={styles.button}>
+                <Text style={styles.button_text} >BAŞLA</Text>
+            </Pressable>
 
         </View>
     )
