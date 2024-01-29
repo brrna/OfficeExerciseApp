@@ -16,6 +16,7 @@ function Router() {
 
     return (
             <Stack.Navigator 
+                style={{flex: 1}}
                 screenOptions={{headerShown: false}}>
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="Back" component={Back} />

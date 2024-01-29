@@ -8,11 +8,11 @@ import { NavigationContainer } from '@react-navigation/native';
 function App() {
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
-        <Router />
+        <GestureHandlerRootView style={{flex: 1}}>
+          <Router />
+        </GestureHandlerRootView>
       </NavigationContainer>
-    </GestureHandlerRootView>
   )
 }
 

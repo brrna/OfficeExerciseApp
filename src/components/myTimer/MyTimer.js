@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import MyGif from "../myGif/MyGif";
 
-const Timer = ({gif, gifIndex}) => {
+const MyTimer = ({gif, gifIndex}) => {
 
     const [seconds, setSeconds] = useState(0);
 
@@ -24,4 +24,4 @@ const Timer = ({gif, gifIndex}) => {
     )
 }
 
-export default Timer;
+export default MyTimer;

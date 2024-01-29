@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Text, Modal, Pressable } from "react-native";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import styles from "./MyButtonStyle";
 import MyProgressBar from "../myProgressBar/MyProgressBar";
-import Timer from "../timer/Timer";
+import Timer from "../myTimer/MyTimer";
 import { useNavigation } from "@react-navigation/native";
 import Home from "../../pages/home/Home";
 
@@ -64,8 +64,8 @@ const MyButton = ({gif, gifIndex, setGifIndex}) => {
                 style={{
                     backgroundColor: "green",
                     height: hp("30%"),
-                    width: wp("70%")
-                }}>
+                    width: wp("70%"),
+                    marginBottom: 100               }}>
                 <Text style={{ fontSize: 30 }} >BAŞLA</Text>
             </TouchableOpacity>
 

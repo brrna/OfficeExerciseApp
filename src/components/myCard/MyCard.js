@@ -1,9 +1,9 @@
 import { Text, Image, View, TouchableOpacity } from 'react-native';
-import styles from "./CardStyle";
+import styles from "./MyCardStyle";
 import { useNavigation } from '@react-navigation/native';
 
 //Component oluşturuldu. exercise props olarak gönderildi.
-const Card = (props) => {
+const MyCard = (props) => {
     
     let {exercise, onLongPress, img = [0]} = props;
 
@@ -37,4 +37,4 @@ const Card = (props) => {
     )
 }
 
-export default Card;
+export default MyCard;

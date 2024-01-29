@@ -1,12 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, TouchableOpacity } from "react-native";
-import Home from "./home/Home";
-import MyButton from "../components/myButton/MyButton";
+import { View } from "react-native";
 import { useState } from "react";
+import MyPage from "../components/myPage/MyPage";
 
 const Neck = () => {
 
-    const navigation = useNavigation();
     const [gifIndex, setGifIndex] = useState(0);
 
     const gif = [
@@ -17,22 +15,7 @@ const Neck = () => {
 
     return(
         <View>
-
-            <TouchableOpacity
-                onPress={() => navigation.navigate(Home) }>
-                <View
-                    style={{
-                        height: 30,
-                        width: 30,
-                        backgroundColor: "red"
-                    }}>
-                </View>
-            </TouchableOpacity>
-
-            <Text>Neck</Text>
-
-            <MyButton gif={gif} gifIndex={gifIndex} setGifIndex={setGifIndex} />
-
+            <MyPage gif={gif} gifIndex={gifIndex} setGifIndex={setGifIndex} />
         </View>
     )
 }
