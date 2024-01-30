@@ -4,27 +4,28 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-nat
 export default StyleSheet.create({
     button_container: {
         backgroundColor: "#e8d7ff",
-        height: hp(95),
+        height: hp(100),
         width: wp(100),
         alignItems: "center",
         justifyContent: "center"
     },
-    x_container: {
+    ArrowContainer: {
         backgroundColor: "#e8d7ff",
         width: wp(100),
         height: hp(6),
-        alignItems: "flex-end",
+        alignItems: "flex-start",
         justifyContent: "center"
     },
-    x: {
+    Arrow: {
         backgroundColor: "#e8d7ff",
         height: hp(6),
         width: wp(10),
-        marginRight: 10,
+        marginLeft: wp(2),
         justifyContent: "center",
         alignItems: "center",
+        marginTop: hp(2)
     }, 
-    x_text: {
+    ArrowText: {
         fontWeight: "bold",
         fontSize: 42,
         color: "#240046"

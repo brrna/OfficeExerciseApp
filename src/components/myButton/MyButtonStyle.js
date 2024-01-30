@@ -46,7 +46,7 @@ export default StyleSheet.create({
         backgroundColor: "#e8d7ff",
         height: hp(6),
         width: wp(10),
-        marginLeft: 10,
+        marginLeft: wp(2),
         justifyContent: "center",
         alignItems: "center",
     }, 

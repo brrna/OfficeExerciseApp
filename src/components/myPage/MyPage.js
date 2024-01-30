@@ -3,6 +3,7 @@ import MyButton from "../myButton/MyButton";
 import styles from "../myPage/MyPageStyle"
 import Home from "../../pages/home/Home";
 import { useNavigation } from "@react-navigation/native";
+import Icon from "react-native-vector-icons/Ionicons"
 
 const MyPage = ({ gif, gifIndex, setGifIndex }) => {
 
@@ -12,12 +13,12 @@ const MyPage = ({ gif, gifIndex, setGifIndex }) => {
         <View>
 
             <View
-                style={styles.x_container}>
+                style={styles.ArrowContainer}>
                 <Pressable
                     onPress={() => navigation.navigate(Home)}
-                    style={styles.x}>
-                        <Text style={styles.x_text}>X</Text>
-                    </Pressable>
+                    style={styles.Arrow}>
+                    <Icon name="arrow-back-outline" style={styles.ArrowText} />
+                </Pressable>
             </View>
 
             <View style={styles.button_container}>
