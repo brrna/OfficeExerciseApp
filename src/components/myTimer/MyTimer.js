@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import MyGif from "../myGif/MyGif";
 
 const MyTimer = ({gif, gifIndex}) => {

@@ -6,12 +6,13 @@ import { useNavigation } from "@react-navigation/native";
 import Home from "../../pages/home/Home";
 import Icon from "react-native-vector-icons/Ionicons"
 import MyTimer from "../myTimer/MyTimer";
-import * as Progress from "react-native-progress";
 
 const MyButton = ({ gif, gifIndex, setGifIndex }) => {
 
     const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
+    const [seconds, setSeconds] = useState(0)
+    const [startCount, setStartCount] = useState(false)
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -28,8 +29,36 @@ const MyButton = ({ gif, gifIndex, setGifIndex }) => {
         return () => clearInterval(timer);
     }, [gif, setGifIndex]);
 
+
+        useEffect(() => {
+
+            const timer = setTimeout(() => {
+                setSeconds(seconds + 1)
+            }, 1000);
+    
+            if(seconds == 5) {
+                setGifIndex(0);
+                setModalVisible(true);
+                setStartCount(false)
+            }
+
+            return() => clearTimeout(timer);
+    
+        },[seconds, setStartCount]);
+    
+
+        const handlePress = () => {
+            setStartCount(true)
+        }
+
+
     return (
-        <View>
+        <View 
+            style={{
+                flex: 1,
+                justifyContent: "space-evenly",
+                alignItems: "center"
+            }}>
 
             <Modal
                 animationType="slide"
@@ -69,14 +98,18 @@ const MyButton = ({ gif, gifIndex, setGifIndex }) => {
 
             </Modal>
 
+            <View>
             <Pressable
-                onPress={() => {
-                    setGifIndex(0)
-                    setModalVisible(true)
-                }}
+                onPress={handlePress}
                 style={styles.button}>
                 <Text style={styles.button_text} >BAŞLA</Text>
             </Pressable>
+            </View>
+
+            <View>
+                <Text>HAZIRLAN</Text>
+                <Text>geriye akıcak süre</Text>
+            </View>
 
         </View>
     )

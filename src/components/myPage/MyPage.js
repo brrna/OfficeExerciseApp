@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from "react-native";
+import { Pressable, View } from "react-native";
 import MyButton from "../myButton/MyButton";
 import styles from "../myPage/MyPageStyle"
 import Home from "../../pages/home/Home";

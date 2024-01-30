@@ -26,11 +26,8 @@ const MyCard = (props) => {
                     resizeMode="contain" />
             </View>
 
-            <View
-                style={styles.textView}>
+            <View style={styles.textView}>
                 <Text style={styles.title}> {exercise.title} </Text>
-
-                <Text style={styles.time}> {exercise.time} </Text>
 
             </View>
         </Pressable>
