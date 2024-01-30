@@ -2,8 +2,22 @@ import { ImageBackground, StyleSheet, Pressable, SafeAreaView, Text, View } from
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import Home from "./home/Home";
 import * as Progress from "react-native-progress";
+import { useEffect, useState } from "react";
 
-function Splash({ navigation }) {
+function Splash({navigation}) {
+
+    const [seconds, setSeconds] = useState(0);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setSeconds(seconds + 1);
+        }, 1000);
+        if(seconds == 3){
+            navigation.navigate(Home)
+        }
+        return() => clearTimeout(timer);
+    }, [seconds]);
+
     return (
         <SafeAreaView
             style={styles.container}>
@@ -20,12 +34,6 @@ function Splash({ navigation }) {
                         <Progress.CircleSnail color={["#7552b7", "#e8d7ff", "#240046"]} />
                     </View>
                 </View>
-
-                <Pressable
-                    style={styles.button}
-                    onPress={() => navigation.navigate(Home)}>
-                    <Text style={styles.buttontext} >GİRİŞ</Text>
-                </Pressable>
 
             </ImageBackground>
         </SafeAreaView>
