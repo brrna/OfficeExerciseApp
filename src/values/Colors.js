@@ -1,6 +1,12 @@
 export const lightTheme = {
-    gri: "f2f2f2",
-    lila: "e8d7ff",
-    koyumor: "240046",
-    açıkmor: "7552b7"
+    background: "f2f2f2",
+    modal: "e8d7ff",
+    textColor: "240046",
+    detail: "7552b7"
+}
+export const darkTheme = {
+    background: "green",
+    modal: "yellow",
+    textColor: "orange",
+    detail: "red"
 }

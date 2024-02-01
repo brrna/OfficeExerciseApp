@@ -1,6 +1,7 @@
 import { View } from "react-native";
 import MyHeader from "../../components/myHeader/MyHeader";
 import MyList from "../../components/myList/MyList";
+import { lightTheme } from "../../values/Colors";
 
 function Home() {
 
@@ -10,7 +11,7 @@ function Home() {
         <View
             style={{
                 flex: 1,
-                backgroundColor: "#f2f2f2"
+                backgroundColor: lightTheme.background
             }}>
 
                 <MyHeader />

@@ -1,6 +1,6 @@
 // Header componenti oluşturuldu, uygulama adı, dark mod ve light mod seçenekleri oluşturuldu.
 import { Text, View } from 'react-native';
-import styles from "./MyHeaderStyle"
+import styles from "./MyHeaderStyle";
 
 const MyHeader = () =>{
     return(

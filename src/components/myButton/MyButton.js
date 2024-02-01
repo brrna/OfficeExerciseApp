@@ -11,8 +11,6 @@ const MyButton = ({ gif, gifIndex, setGifIndex }) => {
 
     const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
-    const [seconds, setSeconds] = useState(0)
-    const [startCount, setStartCount] = useState(false)
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -30,30 +28,8 @@ const MyButton = ({ gif, gifIndex, setGifIndex }) => {
     }, [gif, setGifIndex]);
 
 
-        useEffect(() => {
-
-            const timer = setTimeout(() => {
-                setSeconds(seconds + 1)
-            }, 1000);
-    
-            if(seconds == 5) {
-                setGifIndex(0);
-                setModalVisible(true);
-                setStartCount(false)
-            }
-
-            return() => clearTimeout(timer);
-    
-        },[seconds, setStartCount]);
-    
-
-        const handlePress = () => {
-            setStartCount(true)
-        }
-
-
     return (
-        <View 
+        <View
             style={{
                 flex: 1,
                 justifyContent: "space-evenly",
@@ -83,32 +59,23 @@ const MyButton = ({ gif, gifIndex, setGifIndex }) => {
 
                         <MyTimer gif={gif} gifIndex={gifIndex} />
 
-                            <MyProgressBar />
-                        
+                        <MyProgressBar />
 
-                       
                     </View>
-
-                    <View style={styles.bottom}>
-                       <Text>saniye geriye akacak</Text>   
-                    </View>
-
 
                 </View>
 
             </Modal>
 
             <View>
-            <Pressable
-                onPress={handlePress}
-                style={styles.button}>
-                <Text style={styles.button_text} >BAŞLA</Text>
-            </Pressable>
-            </View>
-
-            <View>
-                <Text>HAZIRLAN</Text>
-                <Text>geriye akıcak süre</Text>
+                <Pressable
+                    onPress={() => {
+                        setGifIndex(0)
+                        setModalVisible(true)
+                    }}
+                    style={styles.button}>
+                    <Text style={styles.button_text} >BAŞLA</Text>
+                </Pressable>
             </View>
 
         </View>

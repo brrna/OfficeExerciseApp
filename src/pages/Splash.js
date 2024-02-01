@@ -3,6 +3,7 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-nat
 import Home from "./home/Home";
 import * as Progress from "react-native-progress";
 import { useEffect, useState } from "react";
+import { lightTheme } from "../values/Colors";
 
 function Splash({navigation}) {
 
@@ -31,7 +32,7 @@ function Splash({navigation}) {
                 <View style={styles.splash}>
                     <Text style={styles.name} >uygulama adi</Text>
                     <View>
-                        <Progress.CircleSnail color={["#7552b7", "#e8d7ff", "#240046"]} />
+                        <Progress.CircleSnail color={["#7552b7", "#e8d7ff", lightTheme.textColor]} />
                     </View>
                 </View>
 
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
         marginBottom: hp(1)
     },
     buttontext: {
-        color: "#240046",
+        color: lightTheme.textColor,
         fontWeight: "bold",
         fontSize: 25,
     },
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     name: {
-        color: "#240046",
+        color: lightTheme.textColor,
         fontSize: 50,
         fontWeight: "bold"
     }
