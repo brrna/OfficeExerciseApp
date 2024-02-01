@@ -1,23 +1,24 @@
 import { StyleSheet } from "react-native";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
+import { lightTheme } from "../../values/Colors";
 
 export default StyleSheet.create({
     button_container: {
-        backgroundColor: "#e8d7ff",
+        backgroundColor: lightTheme.modal,
         height: hp(100),
         width: wp(100),
         alignItems: "center",
         justifyContent: "center"
     },
     ArrowContainer: {
-        backgroundColor: "#e8d7ff",
+        backgroundColor: lightTheme.modal,
         width: wp(100),
         height: hp(6),
         alignItems: "flex-start",
         justifyContent: "center"
     },
     Arrow: {
-        backgroundColor: "#e8d7ff",
+        backgroundColor: lightTheme.modal,
         height: hp(6),
         width: wp(10),
         marginLeft: wp(2),
@@ -28,6 +29,6 @@ export default StyleSheet.create({
     ArrowText: {
         fontWeight: "bold",
         fontSize: 42,
-        color: "#240046"
+        color: lightTheme.textColor
     }
 })

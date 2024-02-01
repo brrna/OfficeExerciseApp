@@ -30,13 +30,13 @@ export default StyleSheet.create({
         marginBottom: 100,
     },
     button_text: {
-        color: "#240046",
+        color: lightTheme.textColor,
         fontSize: 50,
         fontWeight: "bold",
         fontStyle: "normal"
     },
     ArrowContainer: {
-        backgroundColor: "#e8d7ff",
+        backgroundColor: lightTheme.modal,
         width: wp(100),
         height: hp(6),
         alignItems: "flex-start",
@@ -44,7 +44,7 @@ export default StyleSheet.create({
         marginTop: hp(1)
     },
     Arrow: {
-        backgroundColor: "#e8d7ff",
+        backgroundColor: lightTheme.modal,
         height: hp(6),
         width: wp(10),
         marginLeft: wp(2),
@@ -54,6 +54,6 @@ export default StyleSheet.create({
     ArrowText: {
         fontWeight: "bold",
         fontSize: 42,
-        color: "#240046"
+        color: lightTheme.textColor
     },
 })
