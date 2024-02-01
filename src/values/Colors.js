@@ -5,8 +5,9 @@ export const lightTheme = {
     detail: "#7552b7"
 };
 export const darkTheme = {
-    background: "green",
-    modal: "yellow",
-    textColor: "orange",
-    detail: "red"
+    background: "#0A090B",
+    modal: "#52495A",
+    textColor: "#BEBDC7",
+    detail: "#29252D"
 };
+
