@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, Pressable, SafeAreaView, Text, View } from "react-native";
+import { ImageBackground, StyleSheet, SafeAreaView, Text, View } from "react-native";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import Home from "./home/Home";
 import * as Progress from "react-native-progress";

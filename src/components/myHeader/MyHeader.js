@@ -1,14 +1,16 @@
 // Header componenti oluşturuldu, uygulama adı, dark mod ve light mod seçenekleri oluşturuldu.
 import { Text, View, Switch } from 'react-native';
-import styles from "./MyHeaderStyle";
 import { useContext, useState } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
+import createStyles from './MyHeaderStyle';
 
 const MyHeader = () => {
 
-    const [isDark, setIsDark] = useState(false);
-
     let {setIsDarkTheme} = useContext(ThemeContext);
+    let {theme} = useContext(ThemeContext);
+
+    const [isDark, setIsDark] = useState(false);
+    const styles = createStyles(theme);
 
     const toggleSwitch = () => {
         setIsDarkTheme(!isDark);

@@ -1,4 +1,3 @@
-import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
 import { useState } from "react";
 import MyPage from "../components/myPage/MyPage";

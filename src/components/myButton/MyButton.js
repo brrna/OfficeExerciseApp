@@ -1,14 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { View, Text, Modal, Pressable } from "react-native";
-import styles from "./MyButtonStyle";
 import MyProgressBar from "../myProgressBar/MyProgressBar";
 import { useNavigation } from "@react-navigation/native";
 import Home from "../../pages/home/Home";
 import Icon from "react-native-vector-icons/Ionicons"
 import MyTimer from "../myTimer/MyTimer";
+import { ThemeContext } from "../../context/ThemeContext";
+import createStyles from "./MyButtonStyle";
 
 const MyButton = ({ gif, gifIndex, setGifIndex }) => {
 
+    let {theme} = useContext(ThemeContext);
+    
+    const styles = createStyles(theme);
     const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
 

@@ -2,7 +2,7 @@ import { Text, Image, View, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
-import CreateStyles from './MyCardStyle';
+import createStyles from './MyCardStyle';
 
 //Component oluşturuldu. exercise props olarak gönderildi.
 const MyCard = (props) => {
@@ -12,7 +12,7 @@ const MyCard = (props) => {
 
     const navigation = useNavigation();
 
-    const styles = CreateStyles(theme);
+    const styles = createStyles(theme);
 
     const handlePress = () => {
             navigation.navigate(exercise.page);

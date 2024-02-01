@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { useState } from "react";
 import MyPage from "../components/myPage/MyPage";
 
+
 const Neck = () => {
 
     const [gifIndex, setGifIndex] = useState(0);

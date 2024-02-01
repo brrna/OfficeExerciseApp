@@ -1,12 +1,16 @@
 import { View } from "react-native";
 import * as Progress from "react-native-progress";
-import styles from "../myProgressBar/MyProgressStyle"
 import { widthPercentageToDP } from "react-native-responsive-screen";
+import { useContext } from "react";
+import createStyles from "../myProgressBar/MyProgressStyle";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const MyProgressBar = (props) => {
 
     let { progress } = props;
+    let {theme} = useContext(ThemeContext);
 
+    const styles = createStyles(theme);
 
     return (
         <View

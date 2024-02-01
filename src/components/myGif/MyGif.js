@@ -1,7 +1,9 @@
 import { Image, View } from "react-native";
-import styles from "./MyGifStyle"
+import createStyles from "./MyGifStyle";
 
 const MyGif = ({gif = [""], gifIndex}) => {
+
+    const styles = createStyles();
 
     return(
         <View>
