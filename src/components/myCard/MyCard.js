@@ -1,13 +1,18 @@
-import { Text, Image, View, TouchableOpacity, Pressable } from 'react-native';
-import styles from "./MyCardStyle";
+import { Text, Image, View, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
+import CreateStyles from './MyCardStyle';
 
 //Component oluşturuldu. exercise props olarak gönderildi.
 const MyCard = (props) => {
     
     let {exercise, onLongPress, img = [0]} = props;
+    let {theme} = useContext(ThemeContext);
 
     const navigation = useNavigation();
+
+    const styles = CreateStyles(theme);
 
     const handlePress = () => {
             navigation.navigate(exercise.page);

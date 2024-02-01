@@ -3,10 +3,10 @@ export const lightTheme = {
     modal: "#e8d7ff",
     textColor: "#240046",
     detail: "#7552b7"
-}
+};
 export const darkTheme = {
     background: "green",
     modal: "yellow",
     textColor: "orange",
     detail: "red"
-}
+};
