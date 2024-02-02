@@ -26,7 +26,7 @@ export default function createStyles(theme) {
         mode: {
             height: hp(9),
             width: wp(25),
-            backgroundColor: theme.modal,
+            backgroundColor: theme.background,
             alignItems: "center",
             justifyContent: "center"
         }

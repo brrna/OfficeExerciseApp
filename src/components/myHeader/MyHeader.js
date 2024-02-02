@@ -3,6 +3,7 @@ import { Text, View, Switch } from 'react-native';
 import { useContext, useState } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import createStyles from './MyHeaderStyle';
+import { darkTheme, lightTheme } from '../../values/Colors';
 
 const MyHeader = () => {
 
@@ -31,8 +32,8 @@ const MyHeader = () => {
             <View
                 style={styles.mode}>
                 <Switch 
-                    trackColor={{false: '#767577', true: '#81b0ff'}}
-                    thumbColor={isDark ? '#f5dd4b' : '#f4f3f4'}
+                    trackColor={{false: lightTheme.modal, true: darkTheme.modal}}
+                    thumbColor={isDark ? darkTheme.detail : lightTheme.detail}
                     ios_backgroundColor="#3e3e3e"
                     onValueChange={toggleSwitch}
                     value={isDark} />
