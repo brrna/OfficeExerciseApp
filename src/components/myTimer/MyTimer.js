@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { View } from "react-native";
-import MyGif from "../myGif/MyGif";
+import { Image, StyleSheet, View } from "react-native";
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 
-const MyTimer = ({gif, gifIndex}) => {
+const MyTimer = ({ gif = [0], gifIndex }) => {
 
     const [seconds, setSeconds] = useState(0);
 
@@ -10,16 +10,23 @@ const MyTimer = ({gif, gifIndex}) => {
         const timer = setInterval(() => {
             setSeconds((prevSeconds) => prevSeconds + 1);
         }, 1000);
-        return() => clearInterval(timer);
+        return () => clearInterval(timer);
     })
 
-    return(
+    return (
         <View>
             {seconds % 15 < 10 ? (
-                <MyGif gif={gif} gifIndex={gifIndex} />
+                <Image source={gif[gifIndex]} style={styles.gif} />
             ) : null}
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    gif: {
+        width: wp(100),
+        height: hp(35)
+    }
+})
 
 export default MyTimer;
