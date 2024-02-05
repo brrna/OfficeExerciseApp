@@ -78,7 +78,7 @@ const MyButton = ({ gif, gifIndex, setGifIndex }) => {
 
                         <MyTimer gif={gif} gifIndex={gifIndex} />
 
-                        <MyProgressBar />
+                        <MyProgressBar progress={(gifIndex + 1) / (gifIndex+1)} />
 
                     </View>
 

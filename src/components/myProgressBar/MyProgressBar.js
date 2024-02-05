@@ -5,9 +5,8 @@ import { useContext } from "react";
 import createStyles from "../myProgressBar/MyProgressStyle";
 import { ThemeContext } from "../../context/ThemeContext";
 
-const MyProgressBar = (props) => {
+const MyProgressBar = ({progress}) => {
 
-    let { progress } = props;
     let {theme} = useContext(ThemeContext);
 
     const styles = createStyles(theme);
@@ -19,10 +18,10 @@ const MyProgressBar = (props) => {
             <Progress.Bar
                 progress={progress}
                 width={widthPercentageToDP(96)}
-                color="#7552b7"
-                unfilledColor="#7552b7"
+                color={theme.detail}
+                unfilledColor={theme.modal}
                 borderWidth={1}
-                borderColor="#7552b7"
+                borderColor={theme.detail}
                 height={10}
                 borderRadius={5}
             />
