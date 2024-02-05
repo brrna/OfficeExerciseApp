@@ -15,6 +15,7 @@ const MyButton = ({ gif, gifIndex, setGifIndex }) => {
     const styles = createStyles(theme);
     const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -30,6 +31,20 @@ const MyButton = ({ gif, gifIndex, setGifIndex }) => {
 
         return () => clearInterval(timer);
     }, [gif, setGifIndex]);
+
+
+    const[count, setCount] = useState(4);
+    useEffect(() => {
+        const timer = setInterval(() => {
+            if(count > 0){
+                setCount(count - 1)
+            }
+            else{
+                clearInterval(timer)
+            }
+        }, 1000)
+        return() => clearInterval(timer)
+    }, [count])
 
 
     return (
@@ -71,11 +86,17 @@ const MyButton = ({ gif, gifIndex, setGifIndex }) => {
 
             </Modal>
 
-            <View>
+            <View style={styles.back}>
+                <View
+                    style={styles.restView}>{isLoading && <Text style={styles.restText}>{count}</Text>}</View>
                 <Pressable
                     onPress={() => {
                         setGifIndex(0)
-                        setModalVisible(true)
+                        setIsLoading(true)
+                        setTimeout(() => {
+                            setModalVisible(true)
+                            setIsLoading(false)
+                        }, 3000)
                     }}
                     style={styles.button}>
                     <Text style={styles.button_text} >BAŞLA</Text>

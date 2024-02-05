@@ -15,7 +15,7 @@ const Back = () => {
     return (
         <View>
 
-                <MyPage gif={gif} gifIndex={gifIndex} setGifIndex={setGifIndex} />
+            <MyPage gif={gif} gifIndex={gifIndex} setGifIndex={setGifIndex} />
 
         </View>
     )

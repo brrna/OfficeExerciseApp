@@ -55,6 +55,26 @@ export default function createStyles(theme) {
             fontWeight: "bold",
             fontSize: 42,
             color: theme.textColor
+        },
+        restView: {
+            height: hp(12),
+            width: wp(36),
+            backgroundColor: theme.modal,
+            marginTop: hp(5),
+            alignItems: "center",
+            justifyContent: "center"
+        },
+        restText: {
+            color: theme.textColor,
+            fontSize: hp(9)
+        },
+        back: {
+            backgroundColor: theme.modal,
+            height: hp(50),
+            width: wp(50),
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: hp(25)
         }
     })
 
