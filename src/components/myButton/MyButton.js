@@ -8,14 +8,13 @@ import MyTimer from "../myTimer/MyTimer";
 import { ThemeContext } from "../../context/ThemeContext";
 import createStyles from "./MyButtonStyle";
 
-const MyButton = ({ gif, gifIndex, setGifIndex }) => {
+const MyButton = ({ gif = [0], gifIndex, setGifIndex, progress }) => {
 
     let {theme} = useContext(ThemeContext);
     
     const styles = createStyles(theme);
     const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -31,21 +30,6 @@ const MyButton = ({ gif, gifIndex, setGifIndex }) => {
 
         return () => clearInterval(timer);
     }, [gif, setGifIndex]);
-
-
-    const[count, setCount] = useState(4);
-    useEffect(() => {
-        const timer = setInterval(() => {
-            if(count > 0){
-                setCount(count - 1)
-            }
-            else{
-                clearInterval(timer)
-            }
-        }, 1000)
-        return() => clearInterval(timer)
-    }, [count])
-
 
     return (
         <View
@@ -78,7 +62,7 @@ const MyButton = ({ gif, gifIndex, setGifIndex }) => {
 
                         <MyTimer gif={gif} gifIndex={gifIndex} />
 
-                        <MyProgressBar progress={(gifIndex + 1) / (gifIndex+1)} />
+                        <MyProgressBar progress={progress} />
 
                     </View>
 
@@ -87,16 +71,10 @@ const MyButton = ({ gif, gifIndex, setGifIndex }) => {
             </Modal>
 
             <View style={styles.back}>
-                <View
-                    style={styles.restView}>{isLoading && <Text style={styles.restText}>{count}</Text>}</View>
                 <Pressable
                     onPress={() => {
                         setGifIndex(0)
-                        setIsLoading(true)
-                        setTimeout(() => {
-                            setModalVisible(true)
-                            setIsLoading(false)
-                        }, 3000)
+                        setModalVisible(true)
                     }}
                     style={styles.button}>
                     <Text style={styles.button_text} >BAŞLA</Text>

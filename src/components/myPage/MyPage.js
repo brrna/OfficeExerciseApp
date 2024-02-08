@@ -7,7 +7,7 @@ import createStyles from "../myPage/MyPageStyle";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 
-const MyPage = ({ gif, gifIndex, setGifIndex }) => {
+const MyPage = ({ gif, gifIndex, setGifIndex, progress }) => {
 
     let {theme} = useContext(ThemeContext);
 
@@ -28,7 +28,7 @@ const MyPage = ({ gif, gifIndex, setGifIndex }) => {
 
             <View style={styles.button_container}>
 
-                <MyButton gif={gif} gifIndex={gifIndex} setGifIndex={setGifIndex} />
+                <MyButton gif={gif} gifIndex={gifIndex} setGifIndex={setGifIndex} progress={progress} />
 
             </View>
 

@@ -16,7 +16,11 @@ const Neck = () => {
 
     return(
         <View>
-            <MyPage gif={gif} gifIndex={gifIndex} setGifIndex={setGifIndex} />
+            <MyPage 
+            gif={gif} 
+            gifIndex={gifIndex} 
+            setGifIndex={setGifIndex} 
+            progress={(1 / gif.length) * (gifIndex + 1)} />
         </View>
     )
 }
