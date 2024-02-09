@@ -1,8 +1,13 @@
-import { useEffect, useState } from "react";
-import { Image, StyleSheet, View, Text } from "react-native";
-import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
+import { useContext, useEffect, useState } from "react";
+import { Image, View, Text } from "react-native";
+import { ThemeContext } from "../../context/ThemeContext";
+import createStyles from "./MyTimerStyles";
 
 const MyTimer = ({ gif = [0], gifIndex }) => {
+
+    let {theme} = useContext(ThemeContext);
+
+    const styles = createStyles(theme);
 
     const [seconds, setSeconds] = useState(0);
     const [showText, setShowText] = useState(false);
@@ -33,19 +38,12 @@ return (
         {seconds % 15 < 10 ? (
             <Image source={gif[gifIndex]} style={styles.gif} />
         ) : showText ? (
-            <View style={{ justifyContent: "center", alignItems: "center" }}><Text>DİNLEN</Text></View>
+            <View style={styles.textView}><Text style={styles.text}>DİNLEN</Text></View>
         ) : finish ? (
             <Text>BİTTİ</Text> 
         ) : null}
     </View>
 )
 }
-
-const styles = StyleSheet.create({
-    gif: {
-        width: wp(100),
-        height: hp(35)
-    }
-})
 
 export default MyTimer;
