@@ -10,8 +10,8 @@ import createStyles from "./MyButtonStyle";
 
 const MyButton = ({ gif = [0], gifIndex, setGifIndex, progress }) => {
 
-    let {theme} = useContext(ThemeContext);
-    
+    let { theme } = useContext(ThemeContext);
+
     const styles = createStyles(theme);
     const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
@@ -66,6 +66,9 @@ const MyButton = ({ gif = [0], gifIndex, setGifIndex, progress }) => {
 
                     </View>
 
+                    <View style={styles.bottom}>
+                        <Text>timer</Text>
+                    </View>
                 </View>
 
             </Modal>
