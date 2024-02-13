@@ -3,10 +3,10 @@ import { View, Text, Modal, Pressable } from "react-native";
 import MyProgressBar from "../myProgressBar/MyProgressBar";
 import { useNavigation } from "@react-navigation/native";
 import Home from "../../pages/home/Home";
-import Icon from "react-native-vector-icons/Ionicons"
 import MyTimer from "../myTimer/MyTimer";
 import { ThemeContext } from "../../context/ThemeContext";
 import createStyles from "./MyButtonStyle";
+import MyArrowBack from "../myArrowBack.js/myArrowBack";
 
 const MyButton = ({ gif = [0], gifIndex, setGifIndex, progress }) => {
 
@@ -51,14 +51,8 @@ const MyButton = ({ gif = [0], gifIndex, setGifIndex, progress }) => {
                 <View style={styles.container}>
 
                     <View style={styles.top}>
-                        <View
-                            style={styles.ArrowContainer}>
-                            <Pressable
-                                onPress={() => setModalVisible(!modalVisible)}
-                                style={styles.Arrow}>
-                                <Icon name="arrow-back-outline" style={styles.ArrowText} />
-                            </Pressable>
-                        </View>
+                        
+                        <MyArrowBack onPress={() => setModalVisible(!modalVisible)} />
 
                         <MyTimer gif={gif} gifIndex={gifIndex} />
 
