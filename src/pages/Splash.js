@@ -1,23 +1,19 @@
 import { ImageBackground, StyleSheet, SafeAreaView, Text, View } from "react-native";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
-import Home from "./home/Home";
 import * as Progress from "react-native-progress";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { lightTheme } from "../values/Colors";
+import { useNavigation } from "@react-navigation/native";
 
-function Splash({navigation}) {
+function Splash() {
 
-    const [seconds, setSeconds] = useState(0);
+    const navigation  = useNavigation();
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setSeconds(seconds + 1);
-        }, 1000);
-        if(seconds == 3){
-            navigation.navigate(Home)
-        }
-        return() => clearTimeout(timer);
-    }, [seconds]);
+        setTimeout(() => {
+            navigation.navigate("Home")
+        }, 3000);
+    }, [])
 
     return (
         <SafeAreaView
