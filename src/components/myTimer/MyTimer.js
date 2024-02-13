@@ -2,23 +2,17 @@ import { useContext, useEffect, useState } from "react";
 import { Image, View, Text } from "react-native";
 import { ThemeContext } from "../../context/ThemeContext";
 import createStyles from "./MyTimerStyles";
+import { TimerContext } from "../../context/TimerContext";
 
 const MyTimer = ({ gif = [0], gifIndex }) => {
 
     let {theme} = useContext(ThemeContext);
+    let {seconds, setSeconds} = useContext(TimerContext);
 
     const styles = createStyles(theme);
 
-    const [seconds, setSeconds] = useState(0);
     const [showText, setShowText] = useState(false);
     const [finish, setFinish] = useState(false);
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setSeconds((prevSeconds) => prevSeconds + 1);
-        }, 1000);
-        return () => clearInterval(timer);
-    })
 
     useEffect(() => {
         if (seconds % 15 < 10) {
@@ -30,6 +24,7 @@ const MyTimer = ({ gif = [0], gifIndex }) => {
         } else if (seconds % 15 === 0) {
             setFinish(true);
             setShowText(false);
+            setSeconds(0)
         }
 }, [seconds])
 

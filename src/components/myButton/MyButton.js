@@ -2,15 +2,16 @@ import { useContext, useEffect, useState } from "react";
 import { View, Text, Modal, Pressable } from "react-native";
 import MyProgressBar from "../myProgressBar/MyProgressBar";
 import { useNavigation } from "@react-navigation/native";
-import Home from "../../pages/home/Home";
 import MyTimer from "../myTimer/MyTimer";
 import { ThemeContext } from "../../context/ThemeContext";
 import createStyles from "./MyButtonStyle";
 import MyArrowBack from "../myArrowBack.js/myArrowBack";
+import { TimerContext } from "../../context/TimerContext";
 
 const MyButton = ({ gif = [0], gifIndex, setGifIndex, progress }) => {
 
     let { theme } = useContext(ThemeContext);
+    let {seconds, setSeconds}= useContext(TimerContext);
 
     const styles = createStyles(theme);
     const navigation = useNavigation();
@@ -23,6 +24,7 @@ const MyButton = ({ gif = [0], gifIndex, setGifIndex, progress }) => {
                     return prevIndex + 1;
                 } else {
                     setModalVisible(false); //gif sonu modal kapandı 
+                    setSeconds(0);
                     return 0;
                 }
             });
@@ -45,14 +47,18 @@ const MyButton = ({ gif = [0], gifIndex, setGifIndex, progress }) => {
                 visible={modalVisible}
                 onRequestClose={() => {
                     setModalVisible(!modalVisible);
-                    navigation.navigate(Home);
+                    navigation.navigate("Home");
+                    setSeconds(0);
                 }}>
 
                 <View style={styles.container}>
 
                     <View style={styles.top}>
                         
-                        <MyArrowBack onPress={() => setModalVisible(!modalVisible)} />
+                        <MyArrowBack onPress={() => {
+                            setModalVisible(!modalVisible)
+                            setSeconds(0)
+                        }} />
 
                         <MyTimer gif={gif} gifIndex={gifIndex} />
 
@@ -61,7 +67,7 @@ const MyButton = ({ gif = [0], gifIndex, setGifIndex, progress }) => {
                     </View>
 
                     <View style={styles.bottom}>
-                        <Text>timer</Text>
+                        <Text>{seconds}</Text>
                     </View>
                 </View>
 
@@ -71,6 +77,7 @@ const MyButton = ({ gif = [0], gifIndex, setGifIndex, progress }) => {
                 <Pressable
                     onPress={() => {
                         setGifIndex(0)
+                        setSeconds(0)
                         setModalVisible(true)
                     }}
                     style={styles.button}>
