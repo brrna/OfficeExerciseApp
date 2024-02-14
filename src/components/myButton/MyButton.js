@@ -12,7 +12,7 @@ const MyButton = ({ gif = [0], progress }) => {
 
     let { theme } = useContext(ThemeContext);
     let {seconds, setSeconds} = useContext(TimerContext);
-    let {gifIndex, setGifIndex} = useContext(TimerContext);
+    let {gifIndex} = useContext(TimerContext);
 
     const styles = createStyles(theme);
     const navigation = useNavigation();

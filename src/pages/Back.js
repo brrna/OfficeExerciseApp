@@ -5,7 +5,7 @@ import { TimerContext } from "../context/TimerContext";
 
 const Back = () => {
 
-    let {gifIndex, setGifIndex, seconds, setSeconds} = useContext(TimerContext);
+    let {gifIndex, setGifIndex, seconds} = useContext(TimerContext);
 
     const gif = [
         require("../assests/gifs/wall-pushup.gif"),

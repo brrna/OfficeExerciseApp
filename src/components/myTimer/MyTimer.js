@@ -7,8 +7,7 @@ import { TimerContext } from "../../context/TimerContext";
 const MyTimer = ({gif = [0]}) => {
 
     let {theme} = useContext(ThemeContext);
-    let {seconds, setSeconds} = useContext(TimerContext);
-    let {gifIndex, setGifIndex} = useContext(TimerContext);
+    let {seconds, gifIndex} = useContext(TimerContext);
 
     const styles = createStyles(theme);
 
