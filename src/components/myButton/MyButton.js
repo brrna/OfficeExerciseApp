@@ -17,6 +17,7 @@ const MyButton = ({ gif = [0], progress }) => {
     const styles = createStyles(theme);
     const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
+    
 
     return (
         <View
@@ -31,6 +32,7 @@ const MyButton = ({ gif = [0], progress }) => {
                 transparent={true}
                 visible={modalVisible}
                 onRequestClose={() => {
+                    console.log("5")
                     setModalVisible(!modalVisible);
                     navigation.navigate("Home");
                     setSeconds(1)
@@ -41,6 +43,7 @@ const MyButton = ({ gif = [0], progress }) => {
                     <View style={styles.top}>
                         
                         <MyArrowBack onPress={() => {
+                            console.log("6")
                             setModalVisible(!modalVisible)
                             setSeconds(1)
                         }} />
@@ -62,6 +65,7 @@ const MyButton = ({ gif = [0], progress }) => {
             <View style={styles.back}>
                 <Pressable
                     onPress={() => {
+                        console.log("7")
                         setSeconds(1)
                         setModalVisible(true)
                     }}

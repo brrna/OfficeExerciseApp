@@ -14,8 +14,6 @@ export const TimerContextProvider = (props) => {
         return() => clearInterval(interval);
     }, [])
 
-    
-
     return(
         <TimerContext.Provider
             value={{seconds, setSeconds, gifIndex, setGifIndex}}>
