@@ -1,6 +1,5 @@
 import { View } from "react-native";
 import MyButton from "../myButton/MyButton";
-import Home from "../../pages/home/Home";
 import { useNavigation } from "@react-navigation/native";
 import createStyles from "../myPage/MyPageStyle";
 import { useContext } from "react";
@@ -17,7 +16,7 @@ const MyPage = ({ gif, gifIndex, setGifIndex, progress }) => {
     return (
         <View>
 
-            <MyArrowBack onPress={() => navigation.navigate(Home)} />
+            <MyArrowBack onPress={() => navigation.navigate("Home")} />
 
             <View style={styles.button_container}>
 

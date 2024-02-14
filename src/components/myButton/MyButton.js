@@ -8,30 +8,15 @@ import createStyles from "./MyButtonStyle";
 import MyArrowBack from "../myArrowBack.js/myArrowBack";
 import { TimerContext } from "../../context/TimerContext";
 
-const MyButton = ({ gif = [0], gifIndex, setGifIndex, progress }) => {
+const MyButton = ({ gif = [0], progress }) => {
 
     let { theme } = useContext(ThemeContext);
-    let {seconds, setSeconds}= useContext(TimerContext);
+    let {seconds, setSeconds} = useContext(TimerContext);
+    let {gifIndex, setGifIndex} = useContext(TimerContext);
 
     const styles = createStyles(theme);
     const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setGifIndex((prevIndex) => {
-                if (prevIndex < gif.length - 1) {
-                    return prevIndex + 1;
-                } else {
-                    setModalVisible(false); //gif sonu modal kapandı 
-                    setSeconds(0);
-                    return 0;
-                }
-            });
-        }, 15000);
-
-        return () => clearInterval(timer);
-    }, [gif, setGifIndex]);
 
     return (
         <View
@@ -48,7 +33,7 @@ const MyButton = ({ gif = [0], gifIndex, setGifIndex, progress }) => {
                 onRequestClose={() => {
                     setModalVisible(!modalVisible);
                     navigation.navigate("Home");
-                    setSeconds(0);
+                    setSeconds(1);
                 }}>
 
                 <View style={styles.container}>
@@ -57,7 +42,7 @@ const MyButton = ({ gif = [0], gifIndex, setGifIndex, progress }) => {
                         
                         <MyArrowBack onPress={() => {
                             setModalVisible(!modalVisible)
-                            setSeconds(0)
+                            setSeconds(1)
                         }} />
 
                         <MyTimer gif={gif} gifIndex={gifIndex} />
@@ -77,7 +62,7 @@ const MyButton = ({ gif = [0], gifIndex, setGifIndex, progress }) => {
                 <Pressable
                     onPress={() => {
                         setGifIndex(0)
-                        setSeconds(0)
+                        setSeconds(1)
                         setModalVisible(true)
                     }}
                     style={styles.button}>

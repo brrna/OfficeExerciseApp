@@ -4,10 +4,11 @@ import { ThemeContext } from "../../context/ThemeContext";
 import createStyles from "./MyTimerStyles";
 import { TimerContext } from "../../context/TimerContext";
 
-const MyTimer = ({ gif = [0], gifIndex }) => {
+const MyTimer = ({gif = [0]}) => {
 
     let {theme} = useContext(ThemeContext);
     let {seconds, setSeconds} = useContext(TimerContext);
+    let {gifIndex, setGifIndex} = useContext(TimerContext);
 
     const styles = createStyles(theme);
 
@@ -24,7 +25,7 @@ const MyTimer = ({ gif = [0], gifIndex }) => {
         } else if (seconds % 15 === 0) {
             setFinish(true);
             setShowText(false);
-            setSeconds(0)
+            setSeconds(1);
         }
 }, [seconds])
 

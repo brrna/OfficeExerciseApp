@@ -1,4 +1,4 @@
-import { createContext, useState} from "react"
+import { createContext, useState } from "react"
 import { darkTheme, lightTheme } from "../values/Colors";
 
 
@@ -10,10 +10,10 @@ export const ThemeContextProvider = (props) => {
 
     const theme = isDarkTheme ? darkTheme : lightTheme;
 
-    return(
+    return (
         <ThemeContext.Provider
-            value={{isDarkTheme, setIsDarkTheme, theme}}>
-                {props.children}
+            value={{ isDarkTheme, setIsDarkTheme, theme }}>
+            {props.children}
         </ThemeContext.Provider>
     )
 }

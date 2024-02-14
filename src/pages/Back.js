@@ -1,10 +1,11 @@
 import { View } from "react-native";
-import { useState } from "react";
+import { useContext } from "react";
 import MyPage from "../components/myPage/MyPage";
+import { TimerContext } from "../context/TimerContext";
 
 const Back = () => {
 
-    const [gifIndex, setGifIndex] = useState(0);
+    let {gifIndex, setGifIndex} = useContext(TimerContext);
 
     const gif = [
         require("../assests/gifs/wall-pushup.gif"),
