@@ -1,11 +1,11 @@
 import { View } from "react-native";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import MyPage from "../components/myPage/MyPage";
 import { TimerContext } from "../context/TimerContext";
 
 const Back = () => {
 
-    let {gifIndex, setGifIndex} = useContext(TimerContext);
+    let {gifIndex, setGifIndex, seconds, setSeconds} = useContext(TimerContext);
 
     const gif = [
         require("../assests/gifs/wall-pushup.gif"),
@@ -13,13 +13,17 @@ const Back = () => {
         require("../assests/gifs/sitting-spine-bending.gif")
     ]
 
+    useEffect(() => {
+        if(seconds % 15 === 0){
+            setGifIndex(gifIndex => gifIndex + 1)
+        }
+    })
+
     return (
         <View>
 
             <MyPage 
             gif={gif} 
-            gifIndex={gifIndex} 
-            setGifIndex={setGifIndex} 
             progress={(1 / gif.length) * (gifIndex + 1)} />
 
         </View>

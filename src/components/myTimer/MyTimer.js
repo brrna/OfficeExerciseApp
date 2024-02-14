@@ -25,7 +25,6 @@ const MyTimer = ({gif = [0]}) => {
         } else if (seconds % 15 === 0) {
             setFinish(true);
             setShowText(false);
-            setSeconds(1);
         }
 }, [seconds])
 

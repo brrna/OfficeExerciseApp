@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import MyArrowBack from "../myArrowBack.js/myArrowBack";
 
-const MyPage = ({ gif, gifIndex, setGifIndex, progress }) => {
+const MyPage = ({ gif, progress }) => {
 
     let {theme} = useContext(ThemeContext);
 
@@ -20,7 +20,7 @@ const MyPage = ({ gif, gifIndex, setGifIndex, progress }) => {
 
             <View style={styles.button_container}>
 
-                <MyButton gif={gif} gifIndex={gifIndex} setGifIndex={setGifIndex} progress={progress} />
+                <MyButton gif={gif} progress={progress} />
 
             </View>
 

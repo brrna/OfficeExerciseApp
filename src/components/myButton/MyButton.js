@@ -33,7 +33,7 @@ const MyButton = ({ gif = [0], progress }) => {
                 onRequestClose={() => {
                     setModalVisible(!modalVisible);
                     navigation.navigate("Home");
-                    setSeconds(1);
+                    setSeconds(1)
                 }}>
 
                 <View style={styles.container}>
@@ -45,7 +45,7 @@ const MyButton = ({ gif = [0], progress }) => {
                             setSeconds(1)
                         }} />
 
-                        <MyTimer gif={gif} gifIndex={gifIndex} />
+                        <MyTimer gif={gif} />
 
                         <MyProgressBar progress={progress} />
 
@@ -53,6 +53,7 @@ const MyButton = ({ gif = [0], progress }) => {
 
                     <View style={styles.bottom}>
                         <Text>{seconds}</Text>
+                        <Text>{gifIndex}</Text>
                     </View>
                 </View>
 
@@ -61,7 +62,6 @@ const MyButton = ({ gif = [0], progress }) => {
             <View style={styles.back}>
                 <Pressable
                     onPress={() => {
-                        setGifIndex(0)
                         setSeconds(1)
                         setModalVisible(true)
                     }}
