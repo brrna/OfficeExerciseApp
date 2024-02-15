@@ -8,7 +8,7 @@ import createStyles from "./MyButtonStyle";
 import MyArrowBack from "../myArrowBack.js/myArrowBack";
 import { TimerContext } from "../../context/TimerContext";
 
-const MyButton = ({ progress }) => {
+const MyButton = ({ progress, gif }) => {
 
     let { theme } = useContext(ThemeContext);
     let {seconds, setSeconds} = useContext(TimerContext);
@@ -50,7 +50,7 @@ const MyButton = ({ progress }) => {
                             setGifIndex(0)
                         }} />
 
-                        <MyTimer />
+                        <MyTimer gif={gif} />
 
                         <MyProgressBar progress={progress} />
 

@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import MyPage from "../components/myPage/MyPage";
 import { TimerContext } from "../context/TimerContext";
 import { BackExercise } from "../values/Gifs";

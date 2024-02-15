@@ -7,7 +7,7 @@ import { ThemeContext } from "../../context/ThemeContext";
 import MyArrowBack from "../myArrowBack.js/myArrowBack";
 import { TimerContext } from "../../context/TimerContext";
 
-const MyPage = ({ progress }) => {
+const MyPage = ({ progress, gif }) => {
 
     let {theme} = useContext(ThemeContext);
     let {seconds, gifIndex, setGifIndex} = useContext(TimerContext);
@@ -28,7 +28,7 @@ const MyPage = ({ progress }) => {
 
             <View style={styles.button_container}>
 
-                <MyButton progress={progress} />
+                <MyButton progress={progress} gif={gif} />
 
             </View>
 
