@@ -1,25 +1,19 @@
 import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import MyPage from "../components/myPage/MyPage";
+import { TimerContext } from "../context/TimerContext";
+import { NeckExercise } from "../values/Gifs";
 
 
 const Neck = () => {
 
-    const [gifIndex, setGifIndex] = useState(0);
-
-    const gif = [
-        require("../assests/gifs/shoulder-circle.gif"),
-        require("../assests/gifs/neck-circle.gif"),
-        require("../assests/gifs/head-tilt.gif")
-    ]
+    let {gifIndex, gif} = useContext(TimerContext);
 
     return(
         <View>
             <MyPage 
-            gif={gif} 
-            gifIndex={gifIndex} 
-            setGifIndex={setGifIndex} 
+            gif={NeckExercise} 
             progress={(1 / gif.length) * (gifIndex + 1)} />
         </View>
     )

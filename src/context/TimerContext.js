@@ -6,6 +6,7 @@ export const TimerContextProvider = (props) => {
 
     const [seconds, setSeconds] = useState(1);
     const [gifIndex, setGifIndex] = useState(0);
+    const [gif, setGif] = useState([0]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -16,7 +17,7 @@ export const TimerContextProvider = (props) => {
 
     return(
         <TimerContext.Provider
-            value={{seconds, setSeconds, gifIndex, setGifIndex}}>
+            value={{seconds, setSeconds, gifIndex, setGifIndex, gif}}>
             {props.children}
         </TimerContext.Provider>
     )

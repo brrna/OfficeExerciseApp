@@ -2,25 +2,17 @@ import { View } from "react-native";
 import { useContext, useEffect, useState } from "react";
 import MyPage from "../components/myPage/MyPage";
 import { TimerContext } from "../context/TimerContext";
+import { BackExercise } from "../values/Gifs";
 
 const Back = () => {
 
-    let {gifIndex} = useContext(TimerContext);
-
-    const gif = [
-        require("../assests/gifs/wall-pushup.gif"),
-        require("../assests/gifs/wall-sit.gif"),
-        require("../assests/gifs/sitting-spine-bending.gif")
-    ]
-    
+    let {gifIndex, gif} = useContext(TimerContext);
 
     return (
         <View>
-
             <MyPage 
-            gif={gif} 
+            gif={BackExercise} 
             progress={(1 / gif.length) * (gifIndex + 1)} />
-
         </View>
     )
 }

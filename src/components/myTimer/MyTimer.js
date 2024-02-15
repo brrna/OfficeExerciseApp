@@ -4,10 +4,10 @@ import { ThemeContext } from "../../context/ThemeContext";
 import createStyles from "./MyTimerStyles";
 import { TimerContext } from "../../context/TimerContext";
 
-const MyTimer = ({gif = [0]}) => {
+const MyTimer = () => {
 
     let {theme} = useContext(ThemeContext);
-    let {seconds, gifIndex} = useContext(TimerContext);
+    let {seconds, gifIndex, gif} = useContext(TimerContext);
 
     const styles = createStyles(theme);
 

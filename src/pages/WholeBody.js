@@ -1,23 +1,17 @@
 import { View } from "react-native";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import MyPage from "../components/myPage/MyPage";
+import { TimerContext } from "../context/TimerContext";
+import { WholeBodyExercise } from "../values/Gifs";
 
 const WholeBody = () => {
 
-    const [gifIndex, setGifIndex] = useState(0);
-
-    const gif = [
-        require("../assests/gifs/pick-up-knees.gif"),
-        require("../assests/gifs/jumping-jack.gif"),
-        require("../assests/gifs/body-stretch.gif")
-    ]
+    let {gifIndex, gif} = useContext(TimerContext);
 
     return(
         <View>
             <MyPage 
-            gif={gif} 
-            gifIndex={gifIndex} 
-            setGifIndex={setGifIndex} 
+            gif={WholeBodyExercise} 
             progress={(1 / gif.length) * (gifIndex + 1)} />
         </View>
     )

@@ -8,11 +8,11 @@ import createStyles from "./MyButtonStyle";
 import MyArrowBack from "../myArrowBack.js/myArrowBack";
 import { TimerContext } from "../../context/TimerContext";
 
-const MyButton = ({ gif = [0], progress }) => {
+const MyButton = ({ progress }) => {
 
     let { theme } = useContext(ThemeContext);
     let {seconds, setSeconds} = useContext(TimerContext);
-    let {gifIndex} = useContext(TimerContext);
+    let {gifIndex, setGifIndex} = useContext(TimerContext);
 
     const styles = createStyles(theme);
     const navigation = useNavigation();
@@ -36,6 +36,7 @@ const MyButton = ({ gif = [0], progress }) => {
                     setModalVisible(!modalVisible);
                     navigation.navigate("Home");
                     setSeconds(1)
+                    setGifIndex(0)
                 }}>
 
                 <View style={styles.container}>
@@ -46,9 +47,10 @@ const MyButton = ({ gif = [0], progress }) => {
                             console.log("6")
                             setModalVisible(!modalVisible)
                             setSeconds(1)
+                            setGifIndex(0)
                         }} />
 
-                        <MyTimer gif={gif} />
+                        <MyTimer />
 
                         <MyProgressBar progress={progress} />
 
@@ -68,6 +70,7 @@ const MyButton = ({ gif = [0], progress }) => {
                         console.log("7")
                         setSeconds(1)
                         setModalVisible(true)
+                        setGifIndex(0)
                     }}
                     style={styles.button}>
                     <Text style={styles.button_text} >BAŞLA</Text>
