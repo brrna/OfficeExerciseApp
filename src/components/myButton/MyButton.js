@@ -8,7 +8,7 @@ import createStyles from "./MyButtonStyle";
 import MyArrowBack from "../myArrowBack.js/myArrowBack";
 import { TimerContext } from "../../context/TimerContext";
 
-const MyButton = ({ progress, gif }) => {
+const MyButton = ({ progress, gif = [0] }) => {
 
     let { theme } = useContext(ThemeContext);
     let {seconds, setSeconds} = useContext(TimerContext);
@@ -17,7 +17,12 @@ const MyButton = ({ progress, gif }) => {
     const styles = createStyles(theme);
     const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
-    
+
+    useEffect(() => {
+        if(gifIndex >= gif.length - 1){
+                setModalVisible(false)
+        }
+    }, [gifIndex])
 
     return (
         <View

@@ -7,17 +7,17 @@ import { ThemeContext } from "../../context/ThemeContext";
 import MyArrowBack from "../myArrowBack.js/myArrowBack";
 import { TimerContext } from "../../context/TimerContext";
 
-const MyPage = ({ progress, gif }) => {
+const MyPage = ({ progress, gif = [0] }) => {
 
     let {theme} = useContext(ThemeContext);
-    let {seconds, gifIndex, setGifIndex} = useContext(TimerContext);
+    let {seconds, setGifIndex} = useContext(TimerContext);
 
     const navigation = useNavigation();
     const styles = createStyles(theme);
 
     useEffect(() => {
         if(seconds % 15 === 0){
-            setGifIndex(gifIndex => (gifIndex + 1) % gif.length);
+            setGifIndex(gifIndex => (gifIndex + 1));
         }
     }, [seconds]);
 
