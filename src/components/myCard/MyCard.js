@@ -7,8 +7,8 @@ import createStyles from './MyCardStyle';
 //Component oluşturuldu. exercise props olarak gönderildi.
 const MyCard = (props) => {
     
-    let {exercise, onLongPress, img = [0], completed} = props;
-    let {theme} = useContext(ThemeContext);
+    let {exercise, onLongPress, img = [0]} = props;
+    let {theme, completed} = useContext(ThemeContext);
 
     const navigation = useNavigation();
 

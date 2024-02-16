@@ -4,15 +4,16 @@ import exercise from "../../exercise_data.json"
 import { useContext, useState } from "react";
 import MyCard from "../myCard/MyCard";
 import { ThemeContext } from "../../context/ThemeContext";
-import { create } from "react-test-renderer";
 
 const MyList = () => {
+
+    let {completed, isCompleted} = useContext(ThemeContext)
 
     const [data, setData] = useState(exercise);
 
     const renderExercise = ({item, index, drag, isActive}) => {
         return(
-            <MyCard exercise={item} onLongPress={drag} img={img[item.id]} />
+            <MyCard exercise={item} onLongPress={drag} img={img[item.id]} completed={isCompleted ? completed : null} />
         )
     }
 

@@ -14,5 +14,5 @@ export const opaque = {
     opacity : 0.5
 };
 export const transparent = {
-    opacity: 0
+    opacity: 1
 };
