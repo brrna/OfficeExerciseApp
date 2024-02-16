@@ -1,4 +1,3 @@
-// Header componenti oluşturuldu, uygulama adı, dark mod ve light mod seçenekleri oluşturuldu.
 import { Text, View, Switch } from 'react-native';
 import { useContext, useState } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';

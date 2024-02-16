@@ -10,13 +10,19 @@ import { TimerContext } from "../../context/TimerContext";
 
 const MyButton = ({ progress, gif = [0] }) => {
 
-    let { theme, completed } = useContext(ThemeContext);
+    let { theme, setIsCompleted } = useContext(ThemeContext);
     let {seconds, setSeconds} = useContext(TimerContext);
     let {gifIndex, setGifIndex} = useContext(TimerContext);
 
     const styles = createStyles(theme);
     const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
+    const [isComplete, setIsComplete] = useState(false);
+
+    const handleComplete = () => {
+        setIsCompleted(!isComplete)
+        setIsComplete(!isComplete)
+    }
 
     useEffect(() => {
         if(gifIndex >= gif.length - 1){
@@ -37,12 +43,11 @@ const MyButton = ({ progress, gif = [0] }) => {
                 transparent={true}
                 visible={modalVisible}
                 onRequestClose={() => {
-                    console.log("5")
                     setModalVisible(!modalVisible);
                     navigation.navigate("Home");
                     setSeconds(1)
                     setGifIndex(0)
-                    completed(true)
+                    handleComplete()
                 }}>
 
                 <View style={styles.container}>
@@ -50,10 +55,10 @@ const MyButton = ({ progress, gif = [0] }) => {
                     <View style={styles.top}>
                         
                         <MyArrowBack onPress={() => {
-                            console.log("6")
                             setModalVisible(!modalVisible)
                             setSeconds(1)
                             setGifIndex(0)
+                            handleComplete()
                         }} />
 
                         <MyTimer gif={gif} />
@@ -73,7 +78,6 @@ const MyButton = ({ progress, gif = [0] }) => {
             <View style={styles.back}>
                 <Pressable
                     onPress={() => {
-                        console.log("7")
                         setSeconds(1)
                         setModalVisible(true)
                         setGifIndex(0)
