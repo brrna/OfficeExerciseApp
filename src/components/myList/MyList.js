@@ -1,18 +1,18 @@
 import { View } from "react-native";
 import DraggableFlatList from "react-native-draggable-flatlist";
 import exercise from "../../exercise_data.json"
-import { useState } from "react";
+import { useContext, useState } from "react";
 import MyCard from "../myCard/MyCard";
+import { ThemeContext } from "../../context/ThemeContext";
+import { create } from "react-test-renderer";
 
 const MyList = () => {
 
     const [data, setData] = useState(exercise);
 
-    const [completed, setCompleted] = useState(false)
-
     const renderExercise = ({item, index, drag, isActive}) => {
         return(
-            <MyCard exercise={item} completed={completed} onLongPress={drag} img={img[item.id]} />
+            <MyCard exercise={item} onLongPress={drag} img={img[item.id]} />
         )
     }
 

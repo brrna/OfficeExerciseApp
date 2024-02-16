@@ -2,12 +2,13 @@
 import { StyleSheet } from "react-native";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 
-export default function createStyles(theme) {
+export default function createStyles(theme, completed) {
     return StyleSheet.create({
         container: {
             height: hp(23),
             width: wp(98),
             borderColor: theme.detail,
+            opacity: completed,
             borderWidth: 2,
             justifyContent: "center",
             alignItems: "center",
@@ -15,9 +16,6 @@ export default function createStyles(theme) {
             borderRadius: 10,
             backgroundColor: theme.detail,
             margin: 5
-        },
-        completedContainer: {
-            opacity: 0.5
         },
         imageView: {
             backgroundColor: theme.background,

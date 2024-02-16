@@ -10,7 +10,7 @@ import { TimerContext } from "../../context/TimerContext";
 
 const MyButton = ({ progress, gif = [0] }) => {
 
-    let { theme } = useContext(ThemeContext);
+    let { theme, completed } = useContext(ThemeContext);
     let {seconds, setSeconds} = useContext(TimerContext);
     let {gifIndex, setGifIndex} = useContext(TimerContext);
 
@@ -42,6 +42,7 @@ const MyButton = ({ progress, gif = [0] }) => {
                     navigation.navigate("Home");
                     setSeconds(1)
                     setGifIndex(0)
+                    completed(true)
                 }}>
 
                 <View style={styles.container}>
