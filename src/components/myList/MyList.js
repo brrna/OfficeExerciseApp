@@ -8,9 +8,11 @@ const MyList = () => {
 
     const [data, setData] = useState(exercise);
 
+    const [completed, setCompleted] = useState(false)
+
     const renderExercise = ({item, index, drag, isActive}) => {
         return(
-            <MyCard exercise={item} onLongPress={drag} img={img[item.id]} />
+            <MyCard exercise={item} completed={completed} onLongPress={drag} img={img[item.id]} />
         )
     }
 

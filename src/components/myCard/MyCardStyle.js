@@ -16,6 +16,9 @@ export default function createStyles(theme) {
             backgroundColor: theme.detail,
             margin: 5
         },
+        completedContainer: {
+            opacity: 0.5
+        },
         imageView: {
             backgroundColor: theme.background,
             height: hp(21),

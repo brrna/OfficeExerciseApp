@@ -7,7 +7,7 @@ import createStyles from './MyCardStyle';
 //Component oluşturuldu. exercise props olarak gönderildi.
 const MyCard = (props) => {
     
-    let {exercise, onLongPress, img = [0]} = props;
+    let {exercise, onLongPress, img = [0], completed = (false)} = props;
     let {theme} = useContext(ThemeContext);
 
     const navigation = useNavigation();
@@ -22,7 +22,7 @@ const MyCard = (props) => {
         <Pressable
             onPress={handlePress}
             onLongPress={onLongPress}
-            style={styles.container}>
+            style={[styles.container, completed && styles.completedContainer]}>
             <View
                 style={styles.imageView}>
                 <Image
