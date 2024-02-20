@@ -25,7 +25,7 @@ const MyHeader = () => {
                 style={styles.title}>
                 <Text
                     style={styles.titletext}>
-                    exercise app</Text>
+                    OfisGym</Text>
             </View>
 
             <View
