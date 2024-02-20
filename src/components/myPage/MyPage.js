@@ -9,11 +9,11 @@ import { TimerContext } from "../../context/TimerContext";
 
 const MyPage = ({ progress, gif = [0] }) => {
 
-    let {theme} = useContext(ThemeContext);
+    let {theme, completedStyle} = useContext(ThemeContext);
     let {seconds, setGifIndex} = useContext(TimerContext);
 
     const navigation = useNavigation();
-    const styles = createStyles(theme);
+    const styles = createStyles(theme, completedStyle);
 
     useEffect(() => {
         if(seconds % 15 === 0){
