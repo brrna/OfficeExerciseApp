@@ -25,10 +25,18 @@ const MyButton = ({ progress, gif = [0] }) => {
     }
 
     useEffect(() => {
-        if(gifIndex >= gif.length - 1){
-                setModalVisible(false)
+        let timeoutId;
+        if (gifIndex >= gif.length - 1 && modalVisible) {
+            timeoutId = setTimeout(() => {
+                setModalVisible(false);
+                navigation.navigate("Home");
+                setSeconds(1);
+                setGifIndex(0);
+                handleComplete();
+            }, 10000); // 10 saniye bekleyip modalı kapat
         }
-    }, [gifIndex])
+        return () => clearTimeout(timeoutId); // useEffect temizleyicisiyle timeout'u temizle
+    }, [gifIndex, modalVisible]);
 
     return (
         <View
@@ -58,7 +66,6 @@ const MyButton = ({ progress, gif = [0] }) => {
                             setModalVisible(!modalVisible)
                             setSeconds(1)
                             setGifIndex(0)
-                            handleComplete()
                         }} />
 
                         <MyTimer gif={gif} />

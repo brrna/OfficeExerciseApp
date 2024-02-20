@@ -15,17 +15,13 @@ const MyTimer = ({gif}) => {
     const [finish, setFinish] = useState(false);
 
     useEffect(() => {
-        console.log("1")
         if (seconds % 15 < 10) {
-            console.log("2")
             setShowText(false);
             setFinish(false);
         } else if (seconds % 15 >= 10 && seconds % 15 < 15) {
-            console.log("3")
             setShowText(true);
             setFinish(false);
         } else if (seconds % 15 === 0) {
-            console.log("4")
             setFinish(true);
             setShowText(false);
         }
