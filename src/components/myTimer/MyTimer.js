@@ -12,12 +12,18 @@ const MyTimer = ({ gif }) => {
     const styles = createStyles(theme);
 
     const [showText, setShowText] = useState(false);
+    const [finish, setFinish] = useState(false);
 
     useEffect(() => {
         if (seconds % 15 < 10) {
             setShowText(false);
+            setFinish(false);
         } else if (seconds % 15 >= 10 && seconds % 15 < 15) {
             setShowText(true);
+            setFinish(false);
+        } else if (seconds % 15 === 0) {
+            setFinish(true);
+            setShowText(false);
         }
     }, [seconds])
 
@@ -26,9 +32,9 @@ const MyTimer = ({ gif }) => {
             {seconds % 15 < 10 ? (
                 <Image source={gif[gifIndex]} style={styles.gif} />
             ) : showText ? (
-                <View style={styles.textView}>
-                    <Text style={styles.text}>DİNLEN</Text>
-                </View>
+                <View style={styles.textView}><Text style={styles.text}>DİNLEN</Text></View>
+            ) : finish ? (
+                <Text>BİTTİ</Text>
             ) : null}
         </View>
     )
