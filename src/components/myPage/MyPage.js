@@ -7,10 +7,10 @@ import { ThemeContext } from "../../context/ThemeContext";
 import MyArrowBack from "../myArrowBack/myArrowBack";
 import { TimerContext } from "../../context/TimerContext";
 
-const MyPage = ({ progress, gif = [0] }) => {
+const MyPage = ({ gif = [0] }) => {
 
     let {theme, completedStyle} = useContext(ThemeContext);
-    let {seconds, setGifIndex} = useContext(TimerContext);
+    let {seconds, gifIndex, setGifIndex} = useContext(TimerContext);
 
     const navigation = useNavigation();
     const styles = createStyles(theme, completedStyle);
@@ -20,6 +20,8 @@ const MyPage = ({ progress, gif = [0] }) => {
             setGifIndex(gifIndex => (gifIndex + 1));
         }
     }, [seconds]);
+
+    let progress = gifIndex / gif.length;
 
     return (
         <View style={styles.container}>

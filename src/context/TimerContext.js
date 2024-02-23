@@ -17,7 +17,7 @@ export const TimerContextProvider = (props) => {
 
     return(
         <TimerContext.Provider
-            value={{seconds, setSeconds, gifIndex, setGifIndex, gif}}>
+            value={{seconds, setSeconds, gifIndex, setGifIndex, gif, setGif}}>
             {props.children}
         </TimerContext.Provider>
     )
