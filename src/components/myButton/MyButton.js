@@ -7,10 +7,11 @@ import { ThemeContext } from "../../context/ThemeContext";
 import createStyles from "./MyButtonStyle";
 import MyArrowBack from "../myArrowBack/myArrowBack";
 import { TimerContext } from "../../context/TimerContext";
+import MyCountDown from "../myCountdown/MyCountdown";
 
 const MyButton = ({ progress, gif = [0] }) => {
 
-    let { theme, setIsCompletedCard } = useContext(ThemeContext);
+    let { theme } = useContext(ThemeContext);
     let {seconds, setSeconds} = useContext(TimerContext);
     let {gifIndex, setGifIndex} = useContext(TimerContext);
 
@@ -67,6 +68,7 @@ const MyButton = ({ progress, gif = [0] }) => {
                     </View>
 
                     <View style={styles.bottom}>
+                        <MyCountDown />
                         <Text>{seconds}</Text>
                         <Text>{gifIndex}</Text>
                     </View>

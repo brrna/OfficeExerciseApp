@@ -4,43 +4,34 @@ import { ThemeContext } from "../../context/ThemeContext";
 import createStyles from "./MyTimerStyles";
 import { TimerContext } from "../../context/TimerContext";
 
-const MyTimer = ({gif}) => {
+const MyTimer = ({ gif }) => {
 
-    let {theme} = useContext(ThemeContext);
-    let {seconds, gifIndex} = useContext(TimerContext);
+    let { theme } = useContext(ThemeContext);
+    let { seconds, gifIndex } = useContext(TimerContext);
 
     const styles = createStyles(theme);
 
     const [showText, setShowText] = useState(false);
-    const [showTimer, setShowTimer] = useState(false);
-
-    const formatTime = (time) => {
-        const getSeconds = `0${(time % 60)}`.slice(-2);
-        const minutes = `${Math.floor(time / 60)}`;
-        const getMinutes = `0${minutes % 60}`.slice(-2);
-
-        return `${getMinutes} : ${getSeconds}`;
-    }
 
     useEffect(() => {
         if (seconds % 15 < 10) {
             setShowText(false);
         } else if (seconds % 15 >= 10 && seconds % 15 < 15) {
             setShowText(true);
-        } 
-}, [seconds])
+        }
+    }, [seconds])
 
-return (
-    <View>
-        {seconds % 15 < 10 ? (
-            <Image source={gif[gifIndex]} style={styles.gif} />
-        ) : showText ? (
-            <View style={styles.textView}>
-                <Text style={styles.text}>DİNLEN</Text>
-            </View>
-        ) : null }
-    </View>
-)
+    return (
+        <View>
+            {seconds % 15 < 10 ? (
+                <Image source={gif[gifIndex]} style={styles.gif} />
+            ) : showText ? (
+                <View style={styles.textView}>
+                    <Text style={styles.text}>DİNLEN</Text>
+                </View>
+            ) : null}
+        </View>
+    )
 }
 
 export default MyTimer;
