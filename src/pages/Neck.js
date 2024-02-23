@@ -2,6 +2,7 @@ import { View, StyleSheet } from "react-native";
 import { useContext } from "react";
 import MyPage from "../components/myPage/MyPage";
 import { TimerContext } from "../context/TimerContext";
+import { ThemeContext } from "../context/ThemeContext";
 import { NeckExercise } from "../values/Gifs";
 
 

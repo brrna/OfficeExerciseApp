@@ -32,6 +32,12 @@ const MyButton = ({ progress, gif = [0] }) => {
         return () => clearTimeout(timeoutId); 
     }, [gifIndex, modalVisible]);
 
+    useEffect(() => {
+        if (modalVisible) {
+            setSeconds(1);
+        }
+    }, [modalVisible]);
+
     return (
         <View
             style={{
@@ -77,7 +83,6 @@ const MyButton = ({ progress, gif = [0] }) => {
             <View style={styles.back}>
                 <Pressable
                     onPress={() => {
-                        setSeconds(1)
                         setModalVisible(true)
                         setGifIndex(0)
                     }}

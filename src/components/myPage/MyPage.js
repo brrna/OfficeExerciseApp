@@ -21,7 +21,7 @@ const MyPage = ({ gif = [0] }) => {
         }
     }, [seconds]);
 
-    let progress = gifIndex / gif.length;
+    let progress = (gifIndex + 1) / gif.length ;
 
     return (
         <View style={styles.container}>
