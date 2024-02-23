@@ -16,7 +16,7 @@ export default function createStyles(theme) {
             justifyContent: "space-between",
         },
         bottom: {
-            backgroundColor: "orange",
+            backgroundColor: theme.modal,
             height: hp(50),
             width: wp(100),
             justifyContent: "center",

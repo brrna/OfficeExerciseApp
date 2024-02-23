@@ -1,11 +1,15 @@
 import { useContext, useState, useEffect } from "react";
 import { Text, View } from "react-native";
 import { TimerContext } from "../../context/TimerContext";
+import { ThemeContext } from "../../context/ThemeContext";
+import createStyles from "./MyCountdownStyle";
 
 const MyCountDown = () => {
 
     let { seconds } = useContext(TimerContext);
+    let {theme} = useContext(ThemeContext)
 
+    const styles = createStyles(theme)
     const [showExercise, setShowExercise] = useState(false);
     const [showRest, setShowRest] = useState(false);
 
@@ -38,9 +42,9 @@ const MyCountDown = () => {
     return (
         <View>
             {showExercise ? (
-                <Text style={{ color: "black", fontSize: 30 }}>{formatTime(10 - (seconds % 10))}</Text>
+                <Text style={styles.text}>{formatTime(10 - (seconds % 10))}</Text>
             ) : showRest ? (
-                <Text style={{ color: "black", fontSize: 30 }}>{formatTime(5 - (seconds % 5))}</Text>
+                <Text style={styles.text}>{formatTime(5 - (seconds % 5))}</Text>
             ) : null}
 
         </View>

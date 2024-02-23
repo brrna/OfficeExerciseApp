@@ -70,7 +70,6 @@ const MyButton = ({ progress, gif = [0] }) => {
                     <View style={styles.bottom}>
                         <MyCountDown />
                         <Text>{seconds}</Text>
-                        <Text>{gifIndex}</Text>
                     </View>
                 </View>
 
