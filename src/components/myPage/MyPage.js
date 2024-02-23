@@ -22,7 +22,7 @@ const MyPage = ({ progress, gif = [0] }) => {
     }, [seconds]);
 
     return (
-        <View>
+        <View style={styles.container}>
 
             <MyArrowBack onPress={() => navigation.navigate("Home")} />
 

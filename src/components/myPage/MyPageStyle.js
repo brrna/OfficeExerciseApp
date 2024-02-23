@@ -3,6 +3,10 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-nat
 
 export default function createStyles(theme) {
     return StyleSheet.create({
+        container: {
+            flex: 1,
+            backgroundColor: theme.modal
+        },
         button_container: {
             backgroundColor: theme.modal,
             height: hp(100),
@@ -23,8 +27,7 @@ export default function createStyles(theme) {
             width: wp(10),
             marginLeft: wp(2),
             justifyContent: "center",
-            alignItems: "center",
-            marginTop: hp(2)
+            alignItems: "center"
         },
         ArrowText: {
             fontWeight: "bold",
