@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import MyTimer from "../myTimer/MyTimer";
 import { ThemeContext } from "../../context/ThemeContext";
 import createStyles from "./MyButtonStyle";
-import MyArrowBack from "../myArrowBack.js/myArrowBack";
+import MyArrowBack from "../myArrowBack/myArrowBack";
 import { TimerContext } from "../../context/TimerContext";
 
 const MyButton = ({ progress, gif = [0] }) => {

@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import createStyles from "../myPage/MyPageStyle";
 import { useContext, useEffect } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
-import MyArrowBack from "../myArrowBack.js/myArrowBack";
+import MyArrowBack from "../myArrowBack/myArrowBack";
 import { TimerContext } from "../../context/TimerContext";
 
 const MyPage = ({ progress, gif = [0] }) => {
