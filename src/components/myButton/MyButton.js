@@ -10,19 +10,13 @@ import { TimerContext } from "../../context/TimerContext";
 
 const MyButton = ({ progress, gif = [0] }) => {
 
-    let { theme, setIsCompleted } = useContext(ThemeContext);
+    let { theme, setIsCompletedCard } = useContext(ThemeContext);
     let {seconds, setSeconds} = useContext(TimerContext);
     let {gifIndex, setGifIndex} = useContext(TimerContext);
 
     const styles = createStyles(theme);
     const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
-    const [isComplete, setIsComplete] = useState(false);
-
-    const handleComplete = () => {
-        setIsCompleted(!isComplete)
-        setIsComplete(!isComplete)
-    }
 
     useEffect(() => {
         let timeoutId;
@@ -32,10 +26,9 @@ const MyButton = ({ progress, gif = [0] }) => {
                 navigation.navigate("Home");
                 setSeconds(1);
                 setGifIndex(0);
-                handleComplete();
-            }, 10000); // 10 saniye bekleyip modalı kapat
+            }, 10000); 
         }
-        return () => clearTimeout(timeoutId); // useEffect temizleyicisiyle timeout'u temizle
+        return () => clearTimeout(timeoutId); 
     }, [gifIndex, modalVisible]);
 
     return (
@@ -55,7 +48,6 @@ const MyButton = ({ progress, gif = [0] }) => {
                     navigation.navigate("Home");
                     setSeconds(1)
                     setGifIndex(0)
-                    handleComplete()
                 }}>
 
                 <View style={styles.container}>

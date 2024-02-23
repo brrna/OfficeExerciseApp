@@ -6,14 +6,14 @@ export const ThemeContext = createContext();
 export const ThemeContextProvider = (props) => {
 
     const [isDarkTheme, setIsDarkTheme] = useState(false);
-    const [isCompleted, setIsCompleted] = useState(false);
+    const [isCompletedCard, setIsCompletedCard] = useState(false);
 
     const theme = isDarkTheme ? darkTheme : lightTheme;
-    const completedStyle = isCompleted ? opaque : transparent;
+    const completedStyle = isCompletedCard ? opaque : transparent;
 
     return (
         <ThemeContext.Provider
-            value={{ isDarkTheme, setIsDarkTheme, theme, isCompleted, setIsCompleted, completedStyle }}>
+            value={{ isDarkTheme, setIsDarkTheme, theme, isCompletedCard, setIsCompletedCard, completedStyle }}>
             {props.children}
         </ThemeContext.Provider>
     )
