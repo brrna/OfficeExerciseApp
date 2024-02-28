@@ -1,30 +1,38 @@
 [
     {
         "id": 0,
-        "title": "Boyun Egzersizleri",
-        "time": "1",
+        "title": "Boyun ve Omuz Egzersizleri",
         "page" : "Neck"
     },
 
     {
         "id": 1,
+        "title": "Bilek ve Kol Egzersizleri",
+        "page": "Arm"
+    },
+
+    {
+        "id": 2,
+        "title": "Bel Egzersizleri",
+        "page": "Waist"
+    },
+
+    {
+        "id": 3,
         "title": "Sırt Egzersizleri",
-        "time": "2",
         "page": "Back"
 
     },
 
     {
-        "id": 2,
-        "title": "Bacak Egzersizleri",
-        "time": "3",
+        "id": 4,
+        "title": "Diz ve Bacak Egzersizleri",
         "page": "Leg"
     },
 
     {
-        "id": 3,
+        "id": 5,
         "title": "Tüm Vücut Egzersizleri",
-        "time": "4",
         "page": "WholeBody"
     }
 ]

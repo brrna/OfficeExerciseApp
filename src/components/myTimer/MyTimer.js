@@ -22,7 +22,7 @@ const MyTimer = ({ gif }) => {
             setShowText(true);
             setFinish(false);
         } else if (seconds % 15 === 0) {
-            setFinish(false);
+            setFinish(true);
             setShowText(false);
         }
     }, [seconds])

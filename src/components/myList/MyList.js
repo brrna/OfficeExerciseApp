@@ -19,6 +19,8 @@ const MyList = () => {
 
     const img = [
         require("../../assests/images/neck.jpg"),
+        require("../../assests/images/deneme.png"),
+        require("../../assests/images/deneme.png"),
         require("../../assests/images/back.jpg"),
         require("../../assests/images/leg.jpg"),
         require("../../assests/images/body.jpg"),
