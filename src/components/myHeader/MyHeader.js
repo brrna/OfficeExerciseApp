@@ -25,7 +25,7 @@ const MyHeader = () => {
                 style={styles.title}>
                 <Text
                     style={styles.titletext}>
-                    OfisGym</Text>
+                    OfficeGym</Text>
             </View>
 
             <View

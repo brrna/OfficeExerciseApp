@@ -7,7 +7,7 @@ import createStyles from "./MyCountdownStyle";
 const MyCountDown = () => {
 
     let { seconds } = useContext(TimerContext);
-    let {theme} = useContext(ThemeContext)
+    let { theme } = useContext(ThemeContext)
 
     const styles = createStyles(theme)
     const [showExercise, setShowExercise] = useState(false);
@@ -42,9 +42,9 @@ const MyCountDown = () => {
     return (
         <View>
             {showExercise ? (
-                <Text style={styles.text}>{formatTime(10 - (seconds % 10))}</Text>
+                <Text style={styles.text}>{formatTime(10 - (seconds % 15))}</Text>
             ) : showRest ? (
-                <Text style={styles.text}>{formatTime(5 - (seconds % 5))}</Text>
+                <Text style={styles.text}>DİNLEN</Text>
             ) : null}
 
         </View>

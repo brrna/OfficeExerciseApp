@@ -21,18 +21,35 @@ const MyTimer = ({ gif }) => {
         } else if (seconds % 15 >= 10 && seconds % 15 < 15) {
             setShowText(true);
             setFinish(false);
-        } else if (seconds % 15 === 0) {
-            setFinish(true);
+        } else {
+            setFinish(false);
             setShowText(false);
         }
-    }, [seconds])
+
+        if (!showText && seconds % 15 >= 10) {
+            // Image gözükmediği zaman 5 saniyelik geri sayımı başlat
+            const countdownTimeout = setTimeout(() => {
+                setFinish(true);
+            }, (seconds % 15 - 10) * 1000);
+
+            return () => clearTimeout(countdownTimeout);
+        }
+    }, [seconds, showText])
+
+    const formatTime = (time) => {
+        const getSeconds = `0${(time % 60)}`.slice(-2);
+        const minutes = `${Math.floor(time / 60)}`;
+        const getMinutes = `0${minutes % 60}`.slice(-2);
+
+        return `${getMinutes} : ${getSeconds}`;
+    }
 
     return (
         <View>
             {seconds % 15 < 10 ? (
                 <Image source={gif[gifIndex]} style={styles.gif} />
             ) : showText ? (
-                <View style={styles.textView}><Text style={styles.text}>DİNLEN</Text></View>
+                <View style={styles.textView}><Text style={styles.text}>{formatTime(5 - (seconds % 5))}</Text></View>
             ) : finish ? (
                 <Text>BİTTİ</Text>
             ) : null}

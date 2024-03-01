@@ -13,7 +13,7 @@ export default function createStyles(theme) {
         },
         text: {
             color: theme.textColor,
-            fontSize: hp(7),
+            fontSize: hp(9),
             fontWeight: "bold"
         }
     })
