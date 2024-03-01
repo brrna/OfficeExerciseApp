@@ -26,7 +26,7 @@ function Splash() {
                 blurRadius={2}>
 
                 <View style={styles.splash}>
-                    <Text style={styles.name} >OfisGym</Text>
+                    <Text style={styles.name} >OfficeGym</Text>
                     <View>
                         <Progress.CircleSnail color={["#7552b7", "#e8d7ff", lightTheme.textColor]} />
                     </View>

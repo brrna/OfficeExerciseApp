@@ -8,11 +8,11 @@ import createStyles from './MyCardStyle';
 const MyCard = (props) => {
     
     let {exercise, onLongPress, img = [0]} = props;
-    let {theme, completedStyle} = useContext(ThemeContext);
+    let {theme} = useContext(ThemeContext);
 
     const navigation = useNavigation();
 
-    const styles = createStyles(theme, completedStyle);
+    const styles = createStyles(theme);
 
     const handlePress = () => {
             navigation.navigate(exercise.page);

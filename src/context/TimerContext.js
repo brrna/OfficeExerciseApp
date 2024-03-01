@@ -4,7 +4,7 @@ export const TimerContext = createContext();
 
 export const TimerContextProvider = (props) => {
 
-    const [seconds, setSeconds] = useState(1);
+    const [seconds, setSeconds] = useState(0);
     const [gifIndex, setGifIndex] = useState(0);
     const [gif, setGif] = useState([0]);
 

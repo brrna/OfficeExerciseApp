@@ -12,7 +12,7 @@ import MyCountDown from "../myCountdown/MyCountdown";
 const MyButton = ({ progress, gif = [0] }) => {
 
     let { theme } = useContext(ThemeContext);
-    let {seconds, setSeconds} = useContext(TimerContext);
+    let {setSeconds} = useContext(TimerContext);
     let {gifIndex, setGifIndex} = useContext(TimerContext);
 
     const styles = createStyles(theme);
@@ -25,7 +25,7 @@ const MyButton = ({ progress, gif = [0] }) => {
             timeoutId = setTimeout(() => {
                 setModalVisible(false);
                 navigation.navigate("Home");
-                setSeconds(1);
+                setSeconds(0);
                 setGifIndex(0);
             }, 10000); 
         }

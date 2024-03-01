@@ -8,7 +8,6 @@ export default function createStyles(theme, completed) {
             height: hp(23),
             width: wp(98),
             borderColor: theme.detail,
-            opacity: completed.opacity,
             borderWidth: 2,
             justifyContent: "center",
             alignItems: "center",
