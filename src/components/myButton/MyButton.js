@@ -26,7 +26,7 @@ const MyButton = ({ progress, gif = [0] }) => {
                 setModalVisible(false);
                 navigation.navigate("Home");
                 setSeconds(0);
-                setGifIndex(0);
+                setGifIndex(0)
             }, 10000); 
         }
         return () => clearTimeout(timeoutId); 
