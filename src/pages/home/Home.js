@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { SafeAreaView, View } from "react-native";
 import MyHeader from "../../components/myHeader/MyHeader";
 import MyList from "../../components/myList/MyList";
 import { useContext, useEffect } from "react";
@@ -7,7 +7,7 @@ import { BackHandler } from "react-native";
 
 function Home() {
 
-    let { theme } = useContext(ThemeContext)
+    let { theme } = useContext(ThemeContext);
 
     useEffect(() => {
         const backAction = () => {
@@ -24,7 +24,7 @@ function Home() {
     }, []);
 
     return (
-        <View
+        <SafeAreaView
             style={{
                 flex: 1,
                 backgroundColor: theme.background
@@ -34,7 +34,7 @@ function Home() {
 
             <MyList />
 
-        </View>
+        </SafeAreaView>
     )
 
 }
