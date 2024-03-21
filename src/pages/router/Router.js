@@ -11,7 +11,6 @@ import Back from "../Back";
 import Leg from "../Leg";
 import Neck from "../Neck";
 import WholeBody from "../WholeBody";
-import Splash from "../Splash";
 import Arm from "../Arm";
 import Waist from "../Waist";
 import Settings from "../Settings";
