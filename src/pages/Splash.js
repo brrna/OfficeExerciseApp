@@ -12,7 +12,7 @@ function Splash() {
     useEffect(() => {
         setTimeout(() => {
             navigation.navigate("Home")
-        }, 3000);
+        }, 2000);
     }, [])
 
     return (
