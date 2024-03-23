@@ -57,14 +57,6 @@ const MyCountDown = () => {
         }
     }, [seconds])
 
-    const handlePress = () => {
-        sound.play((success) => {
-            if (!success) {
-                console.log('Ses dosyası çalınırken hata oluştu.');
-            }
-        });
-    }
-
     return (
         <View>
             {showExercise ? (

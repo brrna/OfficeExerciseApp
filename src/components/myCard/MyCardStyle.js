@@ -2,13 +2,13 @@
 import { StyleSheet } from "react-native";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 
-export default function createStyles(theme, completed) {
+export default function createStyles(theme) {
     return StyleSheet.create({
         container: {
             height: hp(23),
             width: wp(98),
             borderColor: theme.detail,
-            borderWidth: 2,
+            borderWidth: 1,
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "row",

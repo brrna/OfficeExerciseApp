@@ -1,0 +1,32 @@
+[
+    {
+        "id": 0,
+        "icon": "ss",
+        "text": "Dark Mode",
+        "press" : "handlePress"
+    },
+    {
+        "id": 1,
+        "icon": "ss",
+        "text": "Ses",
+        "press" : "handlePress"
+    },
+    {
+        "id": 2,
+        "icon": "ss",
+        "text": "Dil",
+        "press" : "handlePress"
+    },
+    {
+        "id": 3,
+        "icon": "ss",
+        "text": "Hatırlatıcı",
+        "press" : "handlePress"
+    },
+    {
+        "id": 4,
+        "icon": "ss",
+        "text": "gizlilik sözleşmesi",
+        "press": "handlePress"
+    }
+]
