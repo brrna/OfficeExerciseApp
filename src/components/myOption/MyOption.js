@@ -14,7 +14,7 @@ const MyOption = ({option}) => {
             style={styles.container}>
 
                 <View style={styles.icon} >
-                    {option.icon}
+                    <Text>{option.icon}</Text>
                 </View>
 
                 <View style={styles.textView} >
@@ -22,7 +22,7 @@ const MyOption = ({option}) => {
                 </View>
 
                 <View style={styles.button} >
-                    {option.press}
+                    <Text>{option.press}</Text>
                 </View>
         </View>
     )

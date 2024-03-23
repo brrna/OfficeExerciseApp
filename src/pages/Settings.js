@@ -12,7 +12,7 @@ function Settings() {
     const styles = createStyles(theme);
     const [data, setData] = useState(option);
 
-    const renderOption = ({ item }) => <MyOption option={{ item }} />
+    const renderOption = ({ item }) => <MyOption option={ item } />
     const keyExtractor = item => item.id.toString()
 
     return (
