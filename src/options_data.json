@@ -1,32 +1,27 @@
 [
     {
         "id": 0,
-        "icon": "ss",
         "text": "Dark Mode",
-        "press" : "handlePress"
+        "iconName": "moon-outline"
     },
     {
         "id": 1,
-        "icon": "ss",
         "text": "Ses",
-        "press" : "handlePress"
+        "iconName": "volume-medium-outline"
     },
     {
         "id": 2,
-        "icon": "ss",
         "text": "Dil",
-        "press" : "handlePress"
+        "iconName": "language-outline"
     },
     {
         "id": 3,
-        "icon": "ss",
         "text": "Hatırlatıcı",
-        "press" : "handlePress"
+        "iconName": "notifications-outline"
     },
     {
         "id": 4,
-        "icon": "ss",
-        "text": "gizlilik sözleşmesi",
-        "press": "handlePress"
+        "text": "Gizlilik Sözleşmesi",
+        "iconName": "reader-outline"
     }
 ]
