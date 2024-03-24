@@ -5,7 +5,7 @@ import { ThemeContext } from "../../context/ThemeContext";;
 import Icon from "react-native-vector-icons/Ionicons";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
  
-const MyOption = ({ option }) => {
+const MyOption = ({ option, handlePress = [0] }) => {
 
     let { theme } = useContext(ThemeContext);
 
@@ -18,7 +18,8 @@ const MyOption = ({ option }) => {
                 <Text style={styles.text}>{option.text}</Text>
             </View>
 
-            <TouchableOpacity>
+            <TouchableOpacity
+                onPress={handlePress}>
                 <View style={styles.buttonView} >
                     <Icon name={option.iconName} size={hp(5)} color={theme.textColor} />
                 </View>

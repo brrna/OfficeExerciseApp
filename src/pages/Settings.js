@@ -4,15 +4,37 @@ import MyOption from "../components/myOption/MyOption";
 import { useContext, useState } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import option from "../options_data.json"
+import { darkTheme, lightTheme } from "../values/Colors";
 
 function Settings() {
 
     let {theme} = useContext(ThemeContext);
+    let {setIsDarkTheme} = useContext(ThemeContext);
 
     const styles = createStyles(theme);
     const [data, setData] = useState(option);
+    const [isDark, setIsDark] = useState(false);
 
-    const renderOption = ({ item }) => <MyOption option={ item } />
+    const handlePress = [
+        handleDark = () => {
+            setIsDarkTheme(!isDark);
+            setIsDark(!isDark);
+        },
+        handleVolume = () => {
+            console.log("volume")
+        },
+        handleLanguage = () => {
+            console.log("Language")
+        },
+        handleRemainder = () => {
+            console.log("hatırlatıcı")
+        },
+        handleAgreement = () => {
+            console.log("confidentiality agreement")
+        }
+    ]
+
+    const renderOption = ({ item }) => <MyOption option={ item } handlePress={handlePress[item.id]} />
     const keyExtractor = item => item.id.toString()
 
     return (

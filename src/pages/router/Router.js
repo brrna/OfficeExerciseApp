@@ -59,6 +59,7 @@ function Router() {
                         return <Icon name={iconName} size={size} color={color} />;
                     },
                     headerShown: false,
+                    tabBarShowLabel:false,
                     tabBarActiveTintColor: theme.detail,
                     tabBarInactiveTintColor: theme.textColor,
                     tabBarStyle: {
@@ -66,7 +67,7 @@ function Router() {
                         height: hp(9),
                     },
                     tabBarLabelStyle: {
-                        fontSize: hp(2),
+                        fontSize: hp(4),
                     }
                 })
             }>
