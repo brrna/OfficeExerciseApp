@@ -34,13 +34,15 @@ export default function createStyles(theme) {
             height: hp(21),
             width: wp(40),
             borderTopRightRadius: 10,
-            borderBottomRightRadius: 10
+            borderBottomRightRadius: 10,
+            padding: 5
         },
         title: {
             color: theme.textColor,
-            fontWeight: "bold",
+            fontFamily: "ZTGatha",
             fontSize: hp(3),
-            fontStyle: "italic"
+            fontStyle: "italic",
+            fontWeight: "700"
         },
         time: {
             color: theme.textColor

@@ -14,13 +14,13 @@ export default function createStyles(theme) {
             height: hp(9),
             width: wp(75),
             backgroundColor: theme.background,
-            justifyContent: "center"
+            justifyContent: "center",
         },
         titletext: {
             fontStyle: "italic",
-            fontSize: 30,
-            fontWeight: "bold",
-            marginLeft: 15,
+            fontFamily: "ZTGatha",
+            fontSize: hp(5),
+            marginLeft: wp(5),
             color: theme.textColor
         },
         mode: {

@@ -26,7 +26,7 @@ function Splash() {
                 blurRadius={2}>
 
                 <View style={styles.splash}>
-                    <Text style={styles.name} >OfficeGym</Text>
+                    <Text style={styles.name} >NN</Text>
                     <View>
                         <Progress.CircleSnail color={["#7552b7", "#e8d7ff", lightTheme.textColor]} />
                     </View>
@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
     name: {
         color: lightTheme.textColor,
         fontSize: 50,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        fontFamily: "Rubik"
     }
 })
 
