@@ -2,8 +2,20 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "assets/fonts/His Heart is Mine.ttf",
+      "sha1": "217acd7ad473323407987a89c78b1e9004dd480b"
+    },
+    {
+      "path": "assets/fonts/LONDON PRESLEY.ttf",
+      "sha1": "1cde71554bce65f26c7828bb1d6ec5513ff06037"
+    },
+    {
       "path": "assets/fonts/Rubik.ttf",
       "sha1": "779677a0eaf01277429ffade0d31889647bd355b"
+    },
+    {
+      "path": "assets/fonts/Winter Storm.ttf",
+      "sha1": "21ab862df751ada04d936ff80ee024bab4c21c4c"
     }
   ]
 }

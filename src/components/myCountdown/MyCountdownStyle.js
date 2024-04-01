@@ -5,7 +5,7 @@ export default function createStyles(theme) {
     return StyleSheet.create({
         text: {
             color: theme.textColor,
-            fontWeight: "bold",
+            fontFamily: "Winter Storm",
             fontSize: hp(8)
         }
     })

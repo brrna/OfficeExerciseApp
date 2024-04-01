@@ -64,7 +64,7 @@ const createStyles = (theme) => {
         },
         header: {
             fontSize: hp(4),
-            fontWeight: "bold",
+            fontFamily: "LONDON PRESLEY",
             marginLeft: hp(3),
             marginTop: hp(4),
             color: theme.textColor

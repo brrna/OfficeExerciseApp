@@ -14,7 +14,7 @@ export default function createStyles(theme) {
         text: {
             color: theme.textColor,
             fontSize: hp(9),
-            fontWeight: "bold"
+            fontFamily: "Winter Storm"
         }
     })
 }

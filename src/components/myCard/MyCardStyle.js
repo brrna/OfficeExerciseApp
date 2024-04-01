@@ -39,10 +39,9 @@ export default function createStyles(theme) {
         },
         title: {
             color: theme.textColor,
-            fontFamily: "ZTGatha",
+            fontFamily: "Winter Storm",
             fontSize: hp(3),
-            fontStyle: "italic",
-            fontWeight: "700"
+            fontWeight: "normal"
         },
         time: {
             color: theme.textColor

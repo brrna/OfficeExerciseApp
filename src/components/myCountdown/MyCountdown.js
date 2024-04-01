@@ -65,14 +65,6 @@ const MyCountDown = () => {
                 <Text style={styles.text}>DİNLEN</Text>
             ) : null}
 
-            <Pressable
-                onPress={handlePress}
-                style={{
-                    height: 100,
-                    width: 100,
-                    backgroundColor: "blue"
-                }} />
-
         </View>
     )
 }

@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     name: {
         color: lightTheme.textColor,
         fontSize: 50,
-        fontFamily: "Rubik"
+        fontFamily: "LONDON PRESLEY"
     }
 })
 

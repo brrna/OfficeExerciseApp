@@ -17,8 +17,8 @@ export default function createStyles(theme) {
             justifyContent: "center",
         },
         titletext: {
-            fontFamily: "Rubik",
-            fontSize: hp(5),
+            fontFamily: "LONDON PRESLEY",
+            fontSize: hp(4),
             marginLeft: wp(5),
             color: theme.textColor
         },

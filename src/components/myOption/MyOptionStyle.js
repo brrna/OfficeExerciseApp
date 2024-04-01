@@ -25,7 +25,8 @@ export default function MyOptionStyle(theme){
         text: {
             color: theme.textColor,
             fontSize: hp(3),
-            marginLeft: wp(2)
+            marginLeft: wp(2),
+            fontFamily: "His Heart is Mine"
         },
         buttonView: {
             backgroundColor: theme.background,

@@ -31,8 +31,8 @@ export default function createStyles(theme) {
         },
         button_text: {
             color: theme.textColor,
-            fontSize: 50,
-            fontWeight: "bold",
+            fontSize: hp(7),
+            fontFamily: "Winter Storm",
             fontStyle: "normal"
         },
         ArrowContainer: {
