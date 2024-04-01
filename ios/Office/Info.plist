@@ -54,7 +54,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Oswald.ttf</string>
-		<string>RubikScribble-Regular.ttf</string>
+		<string>Rubik.ttf</string>
 	</array>
 </dict>
 </plist>

@@ -17,8 +17,7 @@ export default function createStyles(theme) {
             justifyContent: "center",
         },
         titletext: {
-            fontStyle: "italic",
-            fontFamily: "ZTGatha",
+            fontFamily: "Rubik",
             fontSize: hp(5),
             marginLeft: wp(5),
             color: theme.textColor
