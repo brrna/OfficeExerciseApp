@@ -1,9 +1,9 @@
 import { StyleSheet, View } from "react-native";
 import { useContext } from "react";
 import MyPage from "../components/myPage/MyPage";
-import { LegExercise } from "../values/Gifs";
 import { TimerContext } from "../context/TimerContext";
 import { ThemeContext } from "../context/ThemeContext";
+import { LegExercise } from "../values/Gifs";
 
 const Leg = () => {
 

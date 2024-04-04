@@ -1,15 +1,12 @@
-export const BackExercise = [
-    require("../assests/gifs/wall-pushup.gif")
-];
+export const BackExercise = [];
 
 export const LegExercise = [
-    require("../assests/gifs/side-lunges.gif")
+    require("../assests/gifs/leg_one.gif"),
+    require("../assests/gifs/leg_two.gif"),
+    require("../assests/gifs/leg_three.gif"),
+    require("../assests/gifs/leg_four.gif")
 ];
 
-export const NeckExercise = [
-    require("../assests/gifs/shoulder-circle.gif")
-];
+export const NeckExercise = [];
 
-export const WholeBodyExercise = [
-    require("../assests/gifs/pick-up-knees.gif")
-];
+export const WholeBodyExercise = [];
