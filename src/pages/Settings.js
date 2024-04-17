@@ -4,7 +4,6 @@ import MyOption from "../components/myOption/MyOption";
 import { useContext, useState } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import option from "../options_data.json"
-import { darkTheme, lightTheme } from "../values/Colors";
 
 function Settings() {
 

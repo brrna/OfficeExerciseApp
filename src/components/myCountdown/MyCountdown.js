@@ -1,5 +1,5 @@
-import { useContext, useState, useEffect } from "react";
-import { Text, View, Pressable } from "react-native";
+import { useContext, useState, useEffect, useRef } from "react";
+import { Text, View } from "react-native";
 import { TimerContext } from "../../context/TimerContext";
 import { ThemeContext } from "../../context/ThemeContext";
 import createStyles from "./MyCountdownStyle";
@@ -10,24 +10,30 @@ const MyCountDown = () => {
     let { seconds } = useContext(TimerContext);
     let { theme } = useContext(ThemeContext);
 
-    var sound = new Sound(require("../../assests/sounds/beep.mp3"), '', (error) => {
-        if (error) {
-            console.log('Ses dosyası yüklenirken hata oluştu: ' + JSON.stringify(error));
-            return;
-        }
-    });
-
     const styles = createStyles(theme)
     const [showExercise, setShowExercise] = useState(false);
     const [showRest, setShowRest] = useState(false);
+    const sound = useRef(null)
 
-    const playSound = () => {
-        sound.play((success) => {
-            if (!success) {
-                console.log('Ses dosyası çalınırken hata oluştu.');
+    if (!sound.current) {
+        sound.current = new Sound(require("../../assests/sounds/beep.mp3"), '', (error) => {
+            if (error) {
+                console.log('Ses dosyası yüklenirken hata oluştu: ' + JSON.stringify(error));
+                return;
             }
         });
     }
+
+    const playSound = () => {
+        sound.current.play((success) => { // sound.current kullanın
+            if (!success) {
+                console.log('Ses dosyası çalınırken hata oluştu.');
+            }
+            console.log("ses dosyası çalındı")
+        });
+        
+    }
+
 
     const formatTime = (time) => {
         const getSeconds = `0${(time % 60)}`.slice(-2);
@@ -39,21 +45,20 @@ const MyCountDown = () => {
 
     useEffect(() => {
         const remainder = seconds % 15;
-        if (remainder < 10) {
+        if(remainder == 10 || remainder == 15){
+            playSound()
+        } else if (remainder < 10) {
             console.log("10 dan geriye")
             setShowRest(false);
             setShowExercise(true);
-            playSound()
-        } else if (remainder < 15 && remainder >= 10) {
+        }else if (remainder < 15 && remainder >= 10) {
             console.log("5 den geriye")
             setShowExercise(false);
             setShowRest(true);
-            playSound()
         } else {
             console.log("bitti")
             setShowExercise(false);
             setShowRest(false);
-            playSound()
         }
     }, [seconds])
 
@@ -66,6 +71,7 @@ const MyCountDown = () => {
             ) : null}
 
         </View>
+        
     )
 }
 
